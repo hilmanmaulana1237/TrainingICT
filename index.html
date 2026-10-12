@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul ICT Excel: Chapter 2 - Data Manipulation, Sorting, & Conditional Formatting</title>
+  <meta name="description" content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 2: Manipulasi Data, Impor CSV/TXT, Multi-Level Sort, dan Conditional Formatting.">
+  <meta name="keywords" content="Tutorial Excel, ICT Excel, Belajar Excel, Find Replace, CSV Import, Multi Level Sorting, Conditional Formatting, Paste Special, Fill Handle">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/excel-components.css">
+</head>
+<body>
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <div class="brand-section">
+      <button class="btn-icon" id="btn-mobile-menu" aria-label="Menu">☰</button>
+      <div class="brand-logo-icon">X</div>
+      <div class="brand-info">
+        <h1>ICT EXCEL MASTER • CHAPTER 2</h1>
+        <span class="brand-badge">Modul Praktik Mandiri & Tutorial Siswa</span>
+      </div>
+    </div>
+
+    <!-- Topbar Actions -->
+    <div class="topbar-actions">
+      <!-- Classroom Timer -->
+      <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
+        <span class="timer-dot"></span>
+        <span id="timer-countdown">90:00</span>
+        <button id="btn-timer-toggle" style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;" title="Mulai / Jeda Timer">▶</button>
+        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;" title="Reset Timer (90 Menit)">↺</button>
+      </div>
+
+      <!-- Slideshow Presentation Mode Button -->
+      <button class="btn btn-presenter" id="btn-open-presentation" title="Buka Mode Slide Pembelajaran Layar Penuh">
+        📽️ Mode Slide Presentasi
+      </button>
+
+      <!-- Practice Datasets Button -->
+      <button class="btn btn-outline" id="btn-open-datasets" title="Unduh File CSV / Contoh Data Latihan">
+        📂 File Latihan Siswa
+      </button>
+
+      <!-- Shortcuts Cheat Sheet Button -->
+      <button class="btn btn-outline" id="btn-open-shortcuts" title="Daftar Pintasan Keyboard Excel">
+        ⌨️ Shortcut Hub
+      </button>
+
+      <!-- Sound Toggle -->
+      <button class="btn-icon" id="btn-toggle-sound" title="Suara Aktif">🔊</button>
+
+      <!-- Theme Mode Toggle -->
+      <button class="btn-icon" id="btn-toggle-theme" title="Ubah Mode Gelap / Terang">🌓</button>
+    </div>
+  </header>
+
+  <!-- ================= APP LAYOUT ================= -->
+  <div class="app-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">Daftar Isi & Topik Kurikulum</span>
+        <div class="progress-card">
+          <div class="progress-header">
+            <span>Kemajuan Belajar</span>
+            <span id="progress-text">0 / 10 Topik (0%)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu" id="sidebar-nav-list">
+        <!-- Rendered by js/app.js -->
+      </ul>
+
+      <div style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
+        💡 <strong>Panduan Belajar:</strong> Klik tombol <em>"Tandai Selesai"</em> di setiap akhir topik setelah kamu berhasil mempraktikkan langkah-langkahnya di Microsoft Excel!
+      </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+      <!-- ================= HERO SECTION ================= -->
+      <section class="hero-card" id="overview">
+        <div>
+          <span class="hero-tag">Modul ICT Resmi • Bab 2</span>
+          <h1 class="hero-title">
+            Data Manipulation, Data Import, Sorting, & Conditional Formatting
+          </h1>
+          <p class="hero-subtitle">
+            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai teknik membersihkan data kotor, memecah file CSV eksternal, membuat filter bertingkat, dan memvisualisasikan data bersyarat secara dinamis di Microsoft Excel komputer kamu.
+          </p>
+
+          <div class="hero-meta-grid">
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num">10</div>
+              <div class="hero-stat-label">Topik Praktik Lengkap</div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num">10</div>
+              <div class="hero-stat-label">Lab Simulator Interaktif</div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num" id="hero-stat-progress">0%</div>
+              <div class="hero-stat-label">Penyelesaian Siswa</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="#topic-2-1" class="btn btn-primary" style="padding:10px 20px;">
+              🚀 Mulai Praktik Topik 2.1
+            </a>
+            <button class="btn btn-outline" onclick="App.openModal('datasets-modal')" style="padding:10px 20px;">
+              📥 Ambil Data Latihan (.csv)
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-banner-frame">
+          <img src="assets/hero-banner.jpg" alt="Excel Data Analytics Dashboard Illustration" class="hero-banner-img">
+        </div>
+      </section>
+
+      <!-- ================= GENERAL THEORY ================= -->
+      <section class="general-theory-card">
+        <span class="section-eyebrow">General Theory</span>
+        <h2 class="section-heading">Pengantar Manajemen & Manipulasi Data Profesional</h2>
+        <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:14px;">
+          Dalam dunia kerja dan teknologi informasi, <strong>data mentah (raw data)</strong> jarang sekali berada dalam kondisi yang rapi dan siap saji. Sebagian besar data yang diekspor dari database sistem perbankan, website formulir pendaftaran, mesin kasir, atau log sensor IoT mengandung kode usang, spasi berlebih, format tanggal berbeda, baris kembar (<em>duplicate rows</em>), hingga pemisah kolom yang tidak teratur.
+        </p>
+        <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:20px;">
+          <strong>Manipulasi Data (Data Manipulation)</strong> bukanlah pemalsuan data, melainkan serangkaian proses sistematis untuk mengubah, menyusun, membersihkan, dan mereorganisasi data agar memiliki struktur baku yang mudah dianalisis, dihitung dengan rumus matematika, serta divisualisasikan dalam bentuk grafik atau laporan eksekutif.
+        </p>
+
+        <h3 style="font-size:1.1rem; font-weight:700; color:var(--excel-green); margin-bottom:12px;">
+          🎯 6 Standar Kompetensi Pembelajaran Chapter 2:
+        </h3>
+        <div class="competencies-grid">
+          <div class="competency-item">
+            <span><strong>1. Standardisasi Kode:</strong> Memperbarui prefiks dan ID secara konsisten menggunakan Find & Replace tanpa risiko salah ketik manual.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>2. Parsing Data Eksternal:</strong> Memahami cara kerja Delimiter saat mengimpor data teks (.csv/.txt) dari aplikasi pihak ketiga.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>3. Navigasi Cepat (Hyperlink):</strong> Membangun lembar kerja profesional dengan tautan URL, email, dan antar-sheet.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>4. Hirarki Sorting & Filter:</strong> Menata urutan data berdasarkan kriteria ganda dan daftar urutan khusus (Custom List).</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>5. Higienitas Data (De-duplication):</strong> Mendeteksi dan mengeliminasi baris ganda dengan pemilihan kriteria yang teliti.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>6. Visualisasi Dinamis:</strong> Menerapkan format bersyarat berbasis aturan statistik (seperti Below Average) yang selalu responsif.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 10 TOPICS CONTAINER ================= -->
+      <section class="topic-container" id="topics-render-container">
+        <!-- Injected dynamically by js/app.js:
+             Topic 2.1 to Topic 2.10 with theory, labs, teacher pedagogy, and challenges -->
+      </section>
+
+      <!-- ================= QUIZ & EVALUATION SECTION ================= -->
+      <section class="quiz-section" id="quiz-section">
+        <div class="quiz-header">
+          <span class="section-eyebrow">Evaluasi Formatif</span>
+          <h2 class="section-heading" style="font-size:2.1rem;">Kuis Evaluasi Pemahaman Siswa</h2>
+          <p style="color:var(--text-muted); font-size:1rem;">
+            Uji pemahaman komprehensif Anda mengenai 10 topik Chapter 2. Setiap soal berbasis studi kasus nyata yang sering ditemui di dunia administrasi dan pengolahan data.
+          </p>
+        </div>
+
+        <!-- Live Quiz Progress Bar -->
+        <div class="quiz-progress-banner" id="quiz-progress-banner">
+          <div class="quiz-progress-meta">
+            <span id="quiz-progress-text">Progres Pengerjaan: 0 / 10 Soal Terjawab (0%)</span>
+            <span id="quiz-badge-status" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status: Belum Dikumpulkan</span>
+          </div>
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="quiz-questions-list">
+          <!-- Injected dynamically by js/app.js -->
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:16px; margin-top:28px;">
+          <button class="btn btn-primary" id="btn-submit-quiz" style="padding:12px 28px; font-size:1rem;">
+            📝 Kumpulkan Jawaban & Hitung Skor
+          </button>
+          <button class="btn btn-outline" id="btn-reset-quiz" style="padding:12px 20px;">
+            ↺ Reset Ulang Soal
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= FOOTER ================= -->
+      <footer style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
+        <p><strong>Modul Pembelajaran ICT - Microsoft Excel Chapter 2</strong></p>
+        <p style="margin-top:4px;">Dirancang khusus sebagai Modul Interaktif dan Panduan Praktik Mandiri Siswa.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ================= MODAL: SHORTCUTS CHEAT SHEET ================= -->
+  <div class="modal-overlay" id="shortcuts-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">⌨️ Pintasan Keyboard Penting (Excel Shortcuts Chapter 2)</h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+          Menguasai pintasan keyboard mempercepat pekerjaan manipulasi data hingga 5x lipat:
+        </p>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Fitur / Aksi</th>
+              <th>Pintasan Windows</th>
+              <th>Fungsi Utama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Find & Replace</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>H</kbd></td>
+              <td>Membuka dialog Replace untuk mengganti teks secara massal</td>
+            </tr>
+            <tr>
+              <td><strong>Insert Hyperlink</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>K</kbd></td>
+              <td>Menyisipkan tautan web, email, atau navigasi sheet ke sel aktif</td>
+            </tr>
+            <tr>
+              <td><strong>Paste Special</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd></td>
+              <td>Menempelkan Values, Formulas, Formats, atau Transpose</td>
+            </tr>
+            <tr>
+              <td><strong>Format Currency</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>$</kbd></td>
+              <td>Menerapkan format mata uang langsung ke sel numerik</td>
+            </tr>
+            <tr>
+              <td><strong>Insert Baris/Kolom</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>+</kbd></td>
+              <td>Menyisipkan baris atau kolom kosong baru</td>
+            </tr>
+            <tr>
+              <td><strong>Delete Baris/Kolom</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>-</kbd></td>
+              <td>Menghapus baris atau kolom yang sedang dipilih</td>
+            </tr>
+            <tr>
+              <td><strong>Buka Dialog Format Cells</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>1</kbd></td>
+              <td>Mengatur Number, Alignment, Font, Border, dan Fill sel</td>
+            </tr>
+            <tr>
+              <td><strong>Remove Duplicates</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>A</kbd> + <kbd>M</kbd></td>
+              <td>Akses cepat ribbon menu Data &gt; Remove Duplicates</td>
+            </tr>
+            <tr>
+              <td><strong>Conditional Formatting</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>H</kbd> + <kbd>L</kbd></td>
+              <td>Akses cepat menu Home &gt; Conditional Formatting</td>
+            </tr>
+            <tr>
+              <td><strong>Flash Fill</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+              <td>Meneruskan pola ekstraksi teks otomatis secara pintar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: PRACTICE DATASETS ================= -->
+  <div class="modal-overlay" id="datasets-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">📂 Bank Data Latihan Siswa (Practice Datasets)</h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+          Gunakan dataset siap pakai berikut untuk latihan di Microsoft Excel desktop atau tugas kelas:
+        </p>
+        <div id="datasets-list-container">
+          <!-- Injected dynamically by js/app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: QUIZ RESULT ================= -->
+  <div class="modal-overlay" id="quiz-result-modal">
+    <div class="modal-box" id="quiz-result-modal-box">
+      <!-- Injected dynamically by js/app.js -->
+    </div>
+  </div>
+
+  <!-- ================= MODAL: COPY SUCCESS & EXCEL PASTE GUIDE ================= -->
+  <div class="modal-overlay" id="copy-success-modal">
+    <div class="modal-box" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color:var(--excel-green); display:flex; align-items:center; gap:8px;">
+          <span>📋</span> Tabel & Desain Siap Ditempel ke Excel!
+        </h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="copy-success-modal-body">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TEACHER PRESENTATION OVERLAY ================= -->
+  <div id="presentation-overlay">
+    <!-- Pres Topbar -->
+    <div class="pres-topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE PEMBELAJARAN</span>
+        <span style="font-size:0.8rem; background:#1e293b; color:#94a3b8; padding:3px 10px; border-radius:4px;">
+          Gunakan Tombol Panah [ ← / → ] atau Space
+        </span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="btn btn-outline" id="btn-pres-laser" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;" title="Nyalakan Laser Pointer Virtual (Tekan L)">
+          🔴 Laser Pointer (L)
+        </button>
+        <button class="btn btn-outline" id="btn-pres-close" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
+          ✕ Tutup Presentasi (Esc)
+        </button>
+      </div>
+    </div>
+
+    <!-- Pres Slide Viewport -->
+    <div class="pres-slide-viewport">
+      <div id="pres-slide-render">
+        <!-- Injected by js/presentation-mode.js -->
+      </div>
+    </div>
+
+    <!-- Pres Footer Navigation -->
+    <div class="pres-footer-bar">
+      <button class="btn btn-outline" id="btn-pres-prev" style="color:white; border-color:#334155;">
+        ← Slide Sebelumnya
+      </button>
+
+      <div id="pres-slide-counter" style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
+        1 / 13
+      </div>
+
+      <button class="btn btn-primary" id="btn-pres-next" style="background:#0284c7; border-color:#0284c7;">
+        Slide Berikutnya →
+      </button>
+    </div>
+  </div>
+
+  <!-- Virtual Laser Pointer Element -->
+  <div class="laser-pointer-dot" id="laser-pointer-dot"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/spreadsheet-simulators.js"></script>
+  <script src="js/presentation-mode.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
