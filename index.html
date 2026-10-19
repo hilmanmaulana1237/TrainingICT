@@ -8,8 +8,8 @@
   <meta name="keywords" content="Tutorial Excel, ICT Excel, Belajar Excel, Find Replace, CSV Import, Multi Level Sorting, Conditional Formatting, Paste Special, Fill Handle">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/excel-components.css">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
+  <link rel="stylesheet" href="css/excel-components.css?v=2.1">
 </head>
 <body>
 
@@ -26,6 +26,16 @@
 
     <!-- Topbar Actions -->
     <div class="topbar-actions">
+      <!-- Chapter Navigation -->
+      <div class="chapter-nav-pills" style="display:flex; gap:4px; align-items:center; margin-right:8px;">
+        <span class="btn btn-primary" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default;">
+          📘 Ch.2
+        </span>
+        <a href="chapter3.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📗 Ch.3
+        </a>
+      </div>
+
       <!-- Classroom Timer -->
       <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
         <span class="timer-dot"></span>
@@ -64,6 +74,17 @@
     <aside class="sidebar" id="app-sidebar">
       <div class="sidebar-header">
         <span class="sidebar-title">Daftar Isi & Topik Kurikulum</span>
+
+        <!-- Chapter Switcher in Sidebar -->
+        <div style="display:flex; gap:6px; margin-bottom:12px;">
+          <span style="flex:1; padding:8px 10px; border-radius:8px; text-align:center; font-size:0.78rem; font-weight:700; background:var(--excel-green); color:white; border:1px solid var(--excel-green);">
+            📘 Chapter 2
+          </span>
+          <a href="chapter3.html" style="flex:1; text-decoration:none; padding:8px 10px; border-radius:8px; text-align:center; font-size:0.78rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+            📗 Chapter 3
+          </a>
+        </div>
+
         <div class="progress-card">
           <div class="progress-header">
             <span>Kemajuan Belajar</span>
@@ -210,6 +231,9 @@
       <footer style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
         <p><strong>Modul Pembelajaran ICT - Microsoft Excel Chapter 2</strong></p>
         <p style="margin-top:4px;">Dirancang khusus sebagai Modul Interaktif dan Panduan Praktik Mandiri Siswa.</p>
+        <p style="margin-top:8px;">
+          <a href="chapter3.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">Lanjut ke Chapter 3: Tables, Table Styles, & Subtotals →</a>
+        </p>
       </footer>
 
     </main>
@@ -379,9 +403,9 @@
   <div class="laser-pointer-dot" id="laser-pointer-dot"></div>
 
   <!-- Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/spreadsheet-simulators.js"></script>
-  <script src="js/presentation-mode.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=2.1"></script>
+  <script src="js/spreadsheet-simulators.js?v=2.1"></script>
+  <script src="js/presentation-mode.js?v=2.1"></script>
+  <script src="js/app.js?v=2.1"></script>
 </body>
 </html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul ICT Excel: Chapter 3 - Tables, Table Styles, Subtotals, & Data Formatting</title>
+  <meta name="description" content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 3: Tables, Table Styles, Subtotals, Icon Sets, Data Bars, dan Sparklines.">
+  <meta name="keywords" content="Tutorial Excel, ICT Excel, Belajar Excel, Excel Table, Table Styles, Total Row, Subtotals, Icon Sets, Data Bars, Sparklines, AutoFit, Print Titles">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=3.1">
+  <link rel="stylesheet" href="css/excel-components.css?v=3.1">
+</head>
+<body>
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <div class="brand-section">
+      <button class="btn-icon" id="btn-mobile-menu" aria-label="Menu">☰</button>
+      <div class="brand-logo-icon">X</div>
+      <div class="brand-info">
+        <h1>ICT EXCEL MASTER • CHAPTER 3</h1>
+        <span class="brand-badge">Modul Praktik Mandiri & Tutorial Siswa</span>
+      </div>
+    </div>
+
+    <!-- Topbar Actions -->
+    <div class="topbar-actions">
+      <!-- Chapter Navigation -->
+      <div class="chapter-nav-pills" style="display:flex; gap:4px; align-items:center; margin-right:8px;">
+        <a href="index.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📘 Ch.2
+        </a>
+        <span class="btn btn-primary" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default;">
+          📗 Ch.3
+        </span>
+      </div>
+
+      <!-- Classroom Timer -->
+      <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
+        <span class="timer-dot"></span>
+        <span id="timer-countdown">90:00</span>
+        <button id="btn-timer-toggle" style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;" title="Mulai / Jeda Timer">▶</button>
+        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;" title="Reset Timer (90 Menit)">↺</button>
+      </div>
+
+      <!-- Slideshow Presentation Mode Button -->
+      <button class="btn btn-presenter" id="btn-open-presentation" title="Buka Mode Slide Pembelajaran Layar Penuh">
+        📽️ Mode Slide Presentasi
+      </button>
+
+      <!-- Practice Datasets Button -->
+      <button class="btn btn-outline" id="btn-open-datasets" title="Unduh File CSV / Contoh Data Latihan">
+        📂 File Latihan Siswa
+      </button>
+
+      <!-- Shortcuts Cheat Sheet Button -->
+      <button class="btn btn-outline" id="btn-open-shortcuts" title="Daftar Pintasan Keyboard Excel">
+        ⌨️ Shortcut Hub
+      </button>
+
+      <!-- Sound Toggle -->
+      <button class="btn-icon" id="btn-toggle-sound" title="Suara Aktif">🔊</button>
+
+      <!-- Theme Mode Toggle -->
+      <button class="btn-icon" id="btn-toggle-theme" title="Ubah Mode Gelap / Terang">🌓</button>
+    </div>
+  </header>
+
+  <!-- ================= APP LAYOUT ================= -->
+  <div class="app-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">Daftar Isi & Topik Kurikulum</span>
+
+        <!-- Chapter Switcher in Sidebar -->
+        <div style="display:flex; gap:6px; margin-bottom:12px;">
+          <a href="index.html" style="flex:1; text-decoration:none; padding:8px 10px; border-radius:8px; text-align:center; font-size:0.78rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+            📘 Chapter 2
+          </a>
+          <span style="flex:1; padding:8px 10px; border-radius:8px; text-align:center; font-size:0.78rem; font-weight:700; background:var(--excel-green); color:white; border:1px solid var(--excel-green);">
+            📗 Chapter 3
+          </span>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <span>Kemajuan Belajar</span>
+            <span id="progress-text">0 / 6 Topik (0%)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu" id="sidebar-nav-list">
+        <!-- Rendered by js/app-ch3.js -->
+      </ul>
+
+      <div style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
+        💡 <strong>Panduan Belajar:</strong> Klik tombol <em>"Tandai Selesai"</em> di setiap akhir topik setelah kamu berhasil mempraktikkan langkah-langkahnya di Microsoft Excel!
+      </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+      <!-- ================= HERO SECTION ================= -->
+      <section class="hero-card" id="overview">
+        <div>
+          <span class="hero-tag">Modul ICT Resmi • Bab 3</span>
+          <h1 class="hero-title">
+            Tables, Table Styles, Subtotals, & Data Formatting
+          </h1>
+          <p class="hero-subtitle">
+            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai teknik membuat Excel Table, menerapkan Table Styles & Total Row, menghitung Subtotal bertingkat, serta memvisualisasikan data menggunakan Icon Sets, Data Bars, dan Sparklines di Microsoft Excel komputer kamu.
+          </p>
+
+          <div class="hero-meta-grid">
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num">6</div>
+              <div class="hero-stat-label">Topik Praktik Lengkap</div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num">6</div>
+              <div class="hero-stat-label">Lab Simulator Interaktif</div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num" id="hero-stat-progress">0%</div>
+              <div class="hero-stat-label">Penyelesaian Siswa</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="#topic-3-1" class="btn btn-primary" style="padding:10px 20px;">
+              🚀 Mulai Praktik Topik 3.1
+            </a>
+            <button class="btn btn-outline" onclick="App.openModal('datasets-modal')" style="padding:10px 20px;">
+              📥 Ambil Data Latihan (.csv)
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-banner-frame">
+          <img src="assets/hero-banner.jpg" alt="Excel Data Analytics Dashboard Illustration" class="hero-banner-img">
+        </div>
+      </section>
+
+      <!-- ================= GENERAL THEORY ================= -->
+      <section class="general-theory-card">
+        <span class="section-eyebrow">General Theory</span>
+        <h2 class="section-heading">Pengantar Tabel, Subtotal, dan Pemformatan Data Visual</h2>
+        <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:14px;">
+          Dalam pengelolaan data profesional, mengubah rentang data biasa menjadi <strong>Excel Table</strong> memberikan keuntungan luar biasa: filter otomatis, referensi terstruktur, perluasan otomatis, dan gaya visual siap pakai. Fitur <strong>Table Styles</strong> dan <strong>Total Row</strong> memungkinkan kalkulasi ringkasan tanpa menulis rumus manual.
+        </p>
+        <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:20px;">
+          Untuk data yang lebih kompleks, fitur <strong>Subtotal</strong> menghitung ringkasan otomatis per grup data bertingkat, sementara <strong>Icon Sets</strong>, <strong>Data Bars</strong>, dan <strong>Sparklines</strong> memberikan visualisasi cepat langsung di dalam sel tanpa perlu membuat grafik terpisah.
+        </p>
+
+        <h3 style="font-size:1.1rem; font-weight:700; color:var(--excel-green); margin-bottom:12px;">
+          🎯 6 Standar Kompetensi Pembelajaran Chapter 3:
+        </h3>
+        <div class="competencies-grid">
+          <div class="competency-item">
+            <span><strong>1. Manajemen Kolom:</strong> Menghapus kolom yang tidak diperlukan dan mengatur lebar kolom otomatis menggunakan AutoFit Column Width.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>2. Pengaturan Cetak:</strong> Mengkonfigurasi Print Titles untuk mengulang baris header dan mengaktifkan Gridlines pada halaman cetak.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>3. Excel Table:</strong> Membuat tabel terstruktur (Ctrl+T) dengan filter otomatis, auto expansion, dan structured references.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>4. Table Styles & Total Row:</strong> Menerapkan gaya visual tabel dan baris ringkasan otomatis dengan fungsi Sum, Average, Count, dan Max.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>5. Multi-Level Subtotals:</strong> Menghitung ringkasan bertingkat per grup data pada tabel yang telah diurutkan, lengkap dengan Outline Levels.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>6. Visualisasi Data:</strong> Menerapkan Icon Sets, Data Bars, dan Sparklines (Line & Win/Loss) untuk visualisasi data langsung di dalam sel.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 6 TOPICS CONTAINER ================= -->
+      <section class="topic-container" id="topics-render-container">
+        <!-- Injected dynamically by js/app-ch3.js:
+             Topic 3.1 to Topic 3.6 with theory, labs, teacher pedagogy, and challenges -->
+      </section>
+
+      <!-- ================= QUIZ & EVALUATION SECTION ================= -->
+      <section class="quiz-section" id="quiz-section">
+        <div class="quiz-header">
+          <span class="section-eyebrow">Evaluasi Formatif</span>
+          <h2 class="section-heading" style="font-size:2.1rem;">Kuis Evaluasi Pemahaman Siswa</h2>
+          <p style="color:var(--text-muted); font-size:1rem;">
+            Uji pemahaman komprehensif Anda mengenai 6 topik Chapter 3. Setiap soal berbasis studi kasus nyata yang sering ditemui di dunia administrasi dan pengolahan data.
+          </p>
+        </div>
+
+        <!-- Live Quiz Progress Bar -->
+        <div class="quiz-progress-banner" id="quiz-progress-banner">
+          <div class="quiz-progress-meta">
+            <span id="quiz-progress-text">Progres Pengerjaan: 0 / 6 Soal Terjawab (0%)</span>
+            <span id="quiz-badge-status" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status: Belum Dikumpulkan</span>
+          </div>
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="quiz-questions-list">
+          <!-- Injected dynamically by js/app-ch3.js -->
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:16px; margin-top:28px;">
+          <button class="btn btn-primary" id="btn-submit-quiz" style="padding:12px 28px; font-size:1rem;">
+            📝 Kumpulkan Jawaban & Hitung Skor
+          </button>
+          <button class="btn btn-outline" id="btn-reset-quiz" style="padding:12px 20px;">
+            ↺ Reset Ulang Soal
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= FOOTER ================= -->
+      <footer style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
+        <p><strong>Modul Pembelajaran ICT - Microsoft Excel Chapter 3</strong></p>
+        <p style="margin-top:4px;">Dirancang khusus sebagai Modul Interaktif dan Panduan Praktik Mandiri Siswa.</p>
+        <p style="margin-top:8px;">
+          <a href="index.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke Chapter 2</a>
+        </p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ================= MODAL: SHORTCUTS CHEAT SHEET ================= -->
+  <div class="modal-overlay" id="shortcuts-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">⌨️ Pintasan Keyboard Penting (Excel Shortcuts Chapter 3)</h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+          Menguasai pintasan keyboard mempercepat pekerjaan pengelolaan tabel dan data formatting:
+        </p>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Fitur / Aksi</th>
+              <th>Pintasan Windows</th>
+              <th>Fungsi Utama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Delete Column</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>-</kbd></td>
+              <td>Menghapus kolom atau baris yang sedang dipilih secara struktural</td>
+            </tr>
+            <tr>
+              <td><strong>Insert Table</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>T</kbd></td>
+              <td>Mengubah data range menjadi Excel Table dengan filter dan gaya otomatis</td>
+            </tr>
+            <tr>
+              <td><strong>Print Preview</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>P</kbd></td>
+              <td>Membuka pratinjau cetak untuk memeriksa layout halaman</td>
+            </tr>
+            <tr>
+              <td><strong>AutoFit Column Width</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>H</kbd> + <kbd>O</kbd> + <kbd>I</kbd></td>
+              <td>Menyesuaikan lebar kolom agar pas dengan konten terpanjang</td>
+            </tr>
+            <tr>
+              <td><strong>Conditional Formatting</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>H</kbd> + <kbd>L</kbd></td>
+              <td>Akses Icon Sets, Data Bars, dan aturan format bersyarat lainnya</td>
+            </tr>
+            <tr>
+              <td><strong>Subtotal</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>A</kbd> + <kbd>B</kbd></td>
+              <td>Membuka dialog Subtotal untuk ringkasan data per grup</td>
+            </tr>
+            <tr>
+              <td><strong>Sort Dialog</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>A</kbd> + <kbd>S</kbd> + <kbd>S</kbd></td>
+              <td>Membuka dialog Sort untuk pengurutan data multi-level</td>
+            </tr>
+            <tr>
+              <td><strong>Select All</strong></td>
+              <td><kbd>Ctrl</kbd> + <kbd>A</kbd></td>
+              <td>Memilih seluruh data atau worksheet untuk operasi massal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: PRACTICE DATASETS ================= -->
+  <div class="modal-overlay" id="datasets-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">📂 Bank Data Latihan Siswa (Practice Datasets)</h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+          Gunakan dataset siap pakai berikut untuk latihan di Microsoft Excel desktop atau tugas kelas:
+        </p>
+        <div id="datasets-list-container">
+          <!-- Injected dynamically by js/app-ch3.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: QUIZ RESULT ================= -->
+  <div class="modal-overlay" id="quiz-result-modal">
+    <div class="modal-box" id="quiz-result-modal-box">
+      <!-- Injected dynamically by js/app-ch3.js -->
+    </div>
+  </div>
+
+  <!-- ================= MODAL: COPY SUCCESS & EXCEL PASTE GUIDE ================= -->
+  <div class="modal-overlay" id="copy-success-modal">
+    <div class="modal-box" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color:var(--excel-green); display:flex; align-items:center; gap:8px;">
+          <span>📋</span> Tabel & Desain Siap Ditempel ke Excel!
+        </h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="copy-success-modal-body">
+        <!-- Injected dynamically by js/app-ch3.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TEACHER PRESENTATION OVERLAY ================= -->
+  <div id="presentation-overlay">
+    <!-- Pres Topbar -->
+    <div class="pres-topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE PEMBELAJARAN</span>
+        <span style="font-size:0.8rem; background:#1e293b; color:#94a3b8; padding:3px 10px; border-radius:4px;">
+          Gunakan Tombol Panah [ ← / → ] atau Space
+        </span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="btn btn-outline" id="btn-pres-laser" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;" title="Nyalakan Laser Pointer Virtual (Tekan L)">
+          🔴 Laser Pointer (L)
+        </button>
+        <button class="btn btn-outline" id="btn-pres-close" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
+          ✕ Tutup Presentasi (Esc)
+        </button>
+      </div>
+    </div>
+
+    <!-- Pres Slide Viewport -->
+    <div class="pres-slide-viewport">
+      <div id="pres-slide-render">
+        <!-- Injected by js/presentation-mode.js -->
+      </div>
+    </div>
+
+    <!-- Pres Footer Navigation -->
+    <div class="pres-footer-bar">
+      <button class="btn btn-outline" id="btn-pres-prev" style="color:white; border-color:#334155;">
+        ← Slide Sebelumnya
+      </button>
+
+      <div id="pres-slide-counter" style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
+        1 / 9
+      </div>
+
+      <button class="btn btn-primary" id="btn-pres-next" style="background:#0284c7; border-color:#0284c7;">
+        Slide Berikutnya →
+      </button>
+    </div>
+  </div>
+
+  <!-- Virtual Laser Pointer Element -->
+  <div class="laser-pointer-dot" id="laser-pointer-dot"></div>
+
+  <!-- Scripts -->
+  <script src="js/data-ch3.js?v=3.1"></script>
+  <script src="js/spreadsheet-simulators-ch3.js?v=3.1"></script>
+  <script src="js/presentation-mode-ch3.js?v=3.1"></script>
+  <script src="js/app-ch3.js?v=3.1"></script>
+</body>
+</html>

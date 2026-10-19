@@ -57,9 +57,9 @@ const PresentationMode = {
         badge: `Shortcut: ${topic.shortcut}`,
         title: `${topic.number} ${topic.title}`,
         subtitle: topic.indonesianTitle,
-        bullets: topic.keyPoints.map(p => p.replace(/\*\*/g, '')),
+        bullets: topic.keyPoints.map(p => p.replace(/\*\*/g, '').replace(/\*/g, '')),
         ribbon: topic.ribbonPath,
-        notes: `💡 TIPS PRAKTIK: ${topic.proTips || topic.teacherTips}\n\n⚠️ PERHATIAN: ${topic.commonMistakes}`
+        notes: `💡 TIPS PRAKTIK: ${(topic.proTips || topic.teacherTips).replace(/\*\*/g, '').replace(/\*/g, '')}\n\n⚠️ PERHATIAN: ${topic.commonMistakes.replace(/\*\*/g, '').replace(/\*/g, '')}`
       });
     });
 
