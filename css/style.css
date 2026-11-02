@@ -1908,3 +1908,77 @@ body.dark-mode .tag-val { background: #581c87; color: #d8b4fe; }
   border-color: #16a34a;
 }
 
+/* =====================================================================
+   CHAPTER 5: CHARTS, SPARKLINES, & VISUAL OBJECTS STYLES
+   ===================================================================== */
+
+.ch5-indigo-badge {
+  background: rgba(79, 70, 229, 0.12);
+  color: #4f46e5;
+  border: 1px solid rgba(79, 70, 229, 0.25);
+}
+
+body.dark-mode .ch5-indigo-badge {
+  background: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.chart-anatomy-card {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
+  border: 1.5px dashed rgba(79, 70, 229, 0.35);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.chart-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.chart-type-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chart-type-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: #4f46e5;
+}
+
+.chart-type-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.chart-type-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.chart-type-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.chart-bar-group:hover rect {
+  opacity: 0.8;
+  filter: brightness(1.1);
+}
+
+

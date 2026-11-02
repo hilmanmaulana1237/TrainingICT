@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modul ICT Excel: Chapter 2 - Data Manipulation, Sorting, & Conditional Formatting</title>
-  <meta name="description" content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 2: Manipulasi Data, Impor CSV/TXT, Multi-Level Sort, dan Conditional Formatting.">
-  <meta name="keywords" content="Tutorial Excel, ICT Excel, Belajar Excel, Find Replace, CSV Import, Multi Level Sorting, Conditional Formatting, Paste Special, Fill Handle">
+  <meta name="description"
+    content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 2: Manipulasi Data, Impor CSV/TXT, Multi-Level Sort, dan Conditional Formatting.">
+  <meta name="keywords"
+    content="Tutorial Excel, ICT Excel, Belajar Excel, Find Replace, CSV Import, Multi Level Sorting, Conditional Formatting, Paste Special, Fill Handle">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=2.1">
   <link rel="stylesheet" href="css/excel-components.css?v=2.1">
 </head>
+
 <body>
 
   <!-- ================= TOPBAR ================= -->
@@ -31,11 +35,17 @@
         <span class="btn btn-primary" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default;">
           📘 Ch.2
         </span>
-        <a href="chapter3.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+        <a href="chapter3.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
           📗 Ch.3
         </a>
-        <a href="chapter4.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+        <a href="chapter4.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
           📙 Ch.4
+        </a>
+        <a href="chapter5.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📊 Ch.5
         </a>
       </div>
 
@@ -43,8 +53,11 @@
       <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
         <span class="timer-dot"></span>
         <span id="timer-countdown">90:00</span>
-        <button id="btn-timer-toggle" style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;" title="Mulai / Jeda Timer">▶</button>
-        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;" title="Reset Timer (90 Menit)">↺</button>
+        <button id="btn-timer-toggle"
+          style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;"
+          title="Mulai / Jeda Timer">▶</button>
+        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;"
+          title="Reset Timer (90 Menit)">↺</button>
       </div>
 
       <!-- Slideshow Presentation Mode Button -->
@@ -80,15 +93,22 @@
 
         <!-- Chapter Switcher in Sidebar -->
         <div style="display:flex; gap:4px; margin-bottom:12px;">
-          <span style="flex:1; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--excel-green); color:white; border:1px solid var(--excel-green);">
-            📘 Ch.2
-          </span>
-          <a href="chapter3.html" style="flex:1; text-decoration:none; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
-            📗 Ch.3
-          </a>
-          <a href="chapter4.html" style="flex:1; text-decoration:none; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
-            📙 Ch.4
-          </a>
+            <span
+              style="flex:1; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--excel-green); color:white; border:1px solid var(--excel-green);">
+              📘 Ch.2
+            </span>
+              <a href="chapter3.html"
+                style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                📗 Ch.3
+              </a>
+                <a href="chapter4.html"
+                  style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                  📙 Ch.4
+                </a>
+                <a href="chapter5.html"
+                  style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                  📊 Ch.5
+                </a>
         </div>
 
         <div class="progress-card">
@@ -107,8 +127,10 @@
         <!-- Rendered by js/app.js -->
       </ul>
 
-      <div style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
-        💡 <strong>Panduan Belajar:</strong> Klik tombol <em>"Tandai Selesai"</em> di setiap akhir topik setelah kamu berhasil mempraktikkan langkah-langkahnya di Microsoft Excel!
+      <div
+        style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
+        💡 <strong>Panduan Belajar:</strong> Klik tombol <em>"Tandai Selesai"</em> di setiap akhir topik setelah kamu
+        berhasil mempraktikkan langkah-langkahnya di Microsoft Excel!
       </div>
     </aside>
 
@@ -123,7 +145,9 @@
             Data Manipulation, Data Import, Sorting, & Conditional Formatting
           </h1>
           <p class="hero-subtitle">
-            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai teknik membersihkan data kotor, memecah file CSV eksternal, membuat filter bertingkat, dan memvisualisasikan data bersyarat secara dinamis di Microsoft Excel komputer kamu.
+            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai teknik membersihkan data kotor,
+            memecah file CSV eksternal, membuat filter bertingkat, dan memvisualisasikan data bersyarat secara dinamis
+            di Microsoft Excel komputer kamu.
           </p>
 
           <div class="hero-meta-grid">
@@ -161,10 +185,16 @@
         <span class="section-eyebrow">General Theory</span>
         <h2 class="section-heading">Pengantar Manajemen & Manipulasi Data Profesional</h2>
         <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:14px;">
-          Dalam dunia kerja dan teknologi informasi, <strong>data mentah (raw data)</strong> jarang sekali berada dalam kondisi yang rapi dan siap saji. Sebagian besar data yang diekspor dari database sistem perbankan, website formulir pendaftaran, mesin kasir, atau log sensor IoT mengandung kode usang, spasi berlebih, format tanggal berbeda, baris kembar (<em>duplicate rows</em>), hingga pemisah kolom yang tidak teratur.
+          Dalam dunia kerja dan teknologi informasi, <strong>data mentah (raw data)</strong> jarang sekali berada dalam
+          kondisi yang rapi dan siap saji. Sebagian besar data yang diekspor dari database sistem perbankan, website
+          formulir pendaftaran, mesin kasir, atau log sensor IoT mengandung kode usang, spasi berlebih, format tanggal
+          berbeda, baris kembar (<em>duplicate rows</em>), hingga pemisah kolom yang tidak teratur.
         </p>
         <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:20px;">
-          <strong>Manipulasi Data (Data Manipulation)</strong> bukanlah pemalsuan data, melainkan serangkaian proses sistematis untuk mengubah, menyusun, membersihkan, dan mereorganisasi data agar memiliki struktur baku yang mudah dianalisis, dihitung dengan rumus matematika, serta divisualisasikan dalam bentuk grafik atau laporan eksekutif.
+          <strong>Manipulasi Data (Data Manipulation)</strong> bukanlah pemalsuan data, melainkan serangkaian proses
+          sistematis untuk mengubah, menyusun, membersihkan, dan mereorganisasi data agar memiliki struktur baku yang
+          mudah dianalisis, dihitung dengan rumus matematika, serta divisualisasikan dalam bentuk grafik atau laporan
+          eksekutif.
         </p>
 
         <h3 style="font-size:1.1rem; font-weight:700; color:var(--excel-green); margin-bottom:12px;">
@@ -172,22 +202,28 @@
         </h3>
         <div class="competencies-grid">
           <div class="competency-item">
-            <span><strong>1. Standardisasi Kode:</strong> Memperbarui prefiks dan ID secara konsisten menggunakan Find & Replace tanpa risiko salah ketik manual.</span>
+            <span><strong>1. Standardisasi Kode:</strong> Memperbarui prefiks dan ID secara konsisten menggunakan Find &
+              Replace tanpa risiko salah ketik manual.</span>
           </div>
           <div class="competency-item">
-            <span><strong>2. Parsing Data Eksternal:</strong> Memahami cara kerja Delimiter saat mengimpor data teks (.csv/.txt) dari aplikasi pihak ketiga.</span>
+            <span><strong>2. Parsing Data Eksternal:</strong> Memahami cara kerja Delimiter saat mengimpor data teks
+              (.csv/.txt) dari aplikasi pihak ketiga.</span>
           </div>
           <div class="competency-item">
-            <span><strong>3. Navigasi Cepat (Hyperlink):</strong> Membangun lembar kerja profesional dengan tautan URL, email, dan antar-sheet.</span>
+            <span><strong>3. Navigasi Cepat (Hyperlink):</strong> Membangun lembar kerja profesional dengan tautan URL,
+              email, dan antar-sheet.</span>
           </div>
           <div class="competency-item">
-            <span><strong>4. Hirarki Sorting & Filter:</strong> Menata urutan data berdasarkan kriteria ganda dan daftar urutan khusus (Custom List).</span>
+            <span><strong>4. Hirarki Sorting & Filter:</strong> Menata urutan data berdasarkan kriteria ganda dan daftar
+              urutan khusus (Custom List).</span>
           </div>
           <div class="competency-item">
-            <span><strong>5. Higienitas Data (De-duplication):</strong> Mendeteksi dan mengeliminasi baris ganda dengan pemilihan kriteria yang teliti.</span>
+            <span><strong>5. Higienitas Data (De-duplication):</strong> Mendeteksi dan mengeliminasi baris ganda dengan
+              pemilihan kriteria yang teliti.</span>
           </div>
           <div class="competency-item">
-            <span><strong>6. Visualisasi Dinamis:</strong> Menerapkan format bersyarat berbasis aturan statistik (seperti Below Average) yang selalu responsif.</span>
+            <span><strong>6. Visualisasi Dinamis:</strong> Menerapkan format bersyarat berbasis aturan statistik
+              (seperti Below Average) yang selalu responsif.</span>
           </div>
         </div>
       </section>
@@ -204,7 +240,8 @@
           <span class="section-eyebrow">Evaluasi Formatif</span>
           <h2 class="section-heading" style="font-size:2.1rem;">Kuis Evaluasi Pemahaman Siswa</h2>
           <p style="color:var(--text-muted); font-size:1rem;">
-            Uji pemahaman komprehensif Anda mengenai 10 topik Chapter 2. Setiap soal berbasis studi kasus nyata yang sering ditemui di dunia administrasi dan pengolahan data.
+            Uji pemahaman komprehensif Anda mengenai 10 topik Chapter 2. Setiap soal berbasis studi kasus nyata yang
+            sering ditemui di dunia administrasi dan pengolahan data.
           </p>
         </div>
 
@@ -212,7 +249,9 @@
         <div class="quiz-progress-banner" id="quiz-progress-banner">
           <div class="quiz-progress-meta">
             <span id="quiz-progress-text">Progres Pengerjaan: 0 / 10 Soal Terjawab (0%)</span>
-            <span id="quiz-badge-status" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status: Belum Dikumpulkan</span>
+            <span id="quiz-badge-status"
+              style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status:
+              Belum Dikumpulkan</span>
           </div>
           <div class="quiz-progress-track">
             <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
@@ -234,13 +273,16 @@
       </section>
 
       <!-- ================= FOOTER ================= -->
-      <footer style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
+      <footer
+        style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
         <p><strong>Modul Pembelajaran ICT - Microsoft Excel Chapter 2</strong></p>
         <p style="margin-top:4px;">Dirancang khusus sebagai Modul Interaktif dan Panduan Praktik Mandiri Siswa.</p>
         <p style="margin-top:8px; display:flex; justify-content:center; gap:16px;">
-          <a href="chapter3.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">Lanjut ke Chapter 3 →</a>
+          <a href="chapter3.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">Lanjut ke
+            Chapter 3 →</a>
           <span>•</span>
-          <a href="chapter4.html" style="color:#d97706; text-decoration:none; font-weight:600;">Lanjut ke Chapter 4: Formulas & Functions →</a>
+          <a href="chapter4.html" style="color:#d97706; text-decoration:none; font-weight:600;">Lanjut ke Chapter 4:
+            Formulas & Functions →</a>
         </p>
       </footer>
 
@@ -368,17 +410,21 @@
     <!-- Pres Topbar -->
     <div class="pres-topbar">
       <div style="display:flex; align-items:center; gap:12px;">
-        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE PEMBELAJARAN</span>
+        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE
+          PEMBELAJARAN</span>
         <span style="font-size:0.8rem; background:#1e293b; color:#94a3b8; padding:3px 10px; border-radius:4px;">
           Gunakan Tombol Panah [ ← / → ] atau Space
         </span>
       </div>
 
       <div style="display:flex; align-items:center; gap:12px;">
-        <button class="btn btn-outline" id="btn-pres-laser" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;" title="Nyalakan Laser Pointer Virtual (Tekan L)">
+        <button class="btn btn-outline" id="btn-pres-laser"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;"
+          title="Nyalakan Laser Pointer Virtual (Tekan L)">
           🔴 Laser Pointer (L)
         </button>
-        <button class="btn btn-outline" id="btn-pres-close" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
+        <button class="btn btn-outline" id="btn-pres-close"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
           ✕ Tutup Presentasi (Esc)
         </button>
       </div>
@@ -397,7 +443,8 @@
         ← Slide Sebelumnya
       </button>
 
-      <div id="pres-slide-counter" style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
+      <div id="pres-slide-counter"
+        style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
         1 / 13
       </div>
 
@@ -416,4 +463,5 @@
   <script src="js/presentation-mode.js?v=2.1"></script>
   <script src="js/app.js?v=2.1"></script>
 </body>
+
 </html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul ICT Excel: Chapter 5 - Charts, Sparklines, and Visual Objects</title>
+  <meta name="description"
+    content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 5: Basic Chart Creation, Chart Elements (+), Switch Row/Column, Row-Level Sparklines, Changing Chart Type & Combo Chart, serta Pictures dan Text Boxes.">
+  <meta name="keywords"
+    content="Tutorial Excel, ICT Excel, Belajar Excel, Charts Excel, Grafik Excel, Sparklines, Win Loss Sparklines, Switch Row Column, Chart Elements, Combo Chart, Secondary Axis, Alt Text, Text Box Excel">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=5.0">
+  <link rel="stylesheet" href="css/excel-components.css?v=5.0">
+</head>
+
+<body>
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <div class="brand-section">
+      <button class="btn-icon" id="btn-mobile-menu" aria-label="Menu">☰</button>
+      <div class="brand-logo-icon" style="background:#4f46e5;">X</div>
+      <div class="brand-info">
+        <h1>ICT EXCEL MASTER • CHAPTER 5</h1>
+        <span class="brand-badge"
+          style="background:rgba(79, 70, 229, 0.15); color:#4f46e5; border-color:rgba(79, 70, 229, 0.3);">Modul Praktik
+          Visualisasi Data Siswa</span>
+      </div>
+    </div>
+
+    <!-- Topbar Actions -->
+    <div class="topbar-actions">
+      <!-- Chapter Navigation -->
+      <div class="chapter-nav-pills" style="display:flex; gap:4px; align-items:center; margin-right:8px;">
+        <a href="index.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📘 Ch.2
+        </a>
+        <a href="chapter3.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📗 Ch.3
+        </a>
+        <a href="chapter4.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📙 Ch.4
+        </a>
+        <span class="btn btn-primary"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default; background:#4f46e5; border-color:#4f46e5;">
+          📊 Ch.5
+        </span>
+      </div>
+
+      <!-- Classroom Timer -->
+      <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
+        <span class="timer-dot" style="background:#4f46e5;"></span>
+        <span id="timer-countdown">90:00</span>
+        <button id="btn-timer-toggle"
+          style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;"
+          title="Mulai / Jeda Timer">▶</button>
+        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;"
+          title="Reset Timer (90 Menit)">↺</button>
+      </div>
+
+      <!-- Slideshow Presentation Mode Button -->
+      <button class="btn btn-presenter" id="btn-open-presentation" title="Buka Mode Slide Pembelajaran Layar Penuh">
+        📽️ Mode Slide Presentasi
+      </button>
+
+      <!-- Practice Datasets Button -->
+      <button class="btn btn-outline" id="btn-open-datasets" title="Unduh File CSV / Contoh Data Latihan">
+        📂 File Latihan Siswa
+      </button>
+
+      <!-- Shortcuts Cheat Sheet Button -->
+      <button class="btn btn-outline" id="btn-open-shortcuts" title="Daftar Pintasan Keyboard Grafik & Visual">
+        ⌨️ Shortcut Hub
+      </button>
+
+      <!-- Sound Toggle -->
+      <button class="btn-icon" id="btn-toggle-sound" title="Suara Aktif">🔊</button>
+
+      <!-- Theme Mode Toggle -->
+      <button class="btn-icon" id="btn-toggle-theme" title="Ubah Mode Gelap / Terang">🌓</button>
+    </div>
+  </header>
+
+  <!-- ================= APP LAYOUT ================= -->
+  <div class="app-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">Daftar Isi & Topik Kurikulum</span>
+
+        <!-- Chapter Switcher in Sidebar -->
+        <div style="display:flex; gap:4px; margin-bottom:12px;">
+          <a href="index.html"
+            style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+            📘 Ch.2
+          </a>
+          <a href="chapter3.html"
+            style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+            📗 Ch.3
+          </a>
+          <a href="chapter4.html"
+            style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+            📙 Ch.4
+          </a>
+          <span
+            style="flex:1; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:#4f46e5; color:white; border:1px solid #4f46e5;">
+            📊 Ch.5
+          </span>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <span>Kemajuan Belajar</span>
+            <span id="progress-text">0 / 6 Topik (0%)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar-fill" style="background:#4f46e5;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu" id="sidebar-nav-list">
+        <!-- Rendered by js/app-ch5.js -->
+      </ul>
+
+      <div
+        style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
+        💡 <strong>Tips Sukses Praktik:</strong> Kuasai penggunaan tombol <kbd
+          style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">Alt
+          + F1</kbd> untuk grafik instan dan tombol <kbd
+          style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">Alt</kbd>
+        saat menggeser grafik agar menempel rapi pada grid (*Snap to Grid*)!
+      </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+      <!-- ================= HERO SECTION ================= -->
+      <section class="hero-card" id="overview">
+        <div>
+          <span class="hero-tag ch5-indigo-badge">
+            Modul ICT Resmi • Bab 5
+          </span>
+          <h1 class="hero-title">
+            Charts, Sparklines, and Visual Objects
+          </h1>
+          <p class="hero-subtitle">
+            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: pelajari cara membuat grafik standar dan
+            memindahkan grafik ke Chart Sheet (Move Chart), memilih kolom terpisah dengan tombol Ctrl, mengatur elemen
+            grafik melalui tombol Chart Elements (+), mengubah sudut pandang data dengan Switch Row/Column, membuat tren
+            mikro di dalam sel menggunakan Sparklines (Line, Column, Win/Loss), mengombinasikan metrik satuan berbeda
+            dengan Combo Chart (Secondary Axis), serta menyisipkan gambar ber-Alt Text dan Text Box melayang untuk
+            menyusun laporan eksekutif profesional.
+          </p>
+
+          <div class="hero-meta-grid">
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num" style="color:#4f46e5;">6</div>
+              <div class="hero-stat-label">Topik Praktik Lengkap</div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num" style="color:#4f46e5;">6</div>
+              <div class="hero-stat-label">Lab Simulator Interaktif</div>
+            </div>
+            <div class="hero-stat-pill">
+              <div class="hero-stat-num" id="hero-stat-progress" style="color:#4f46e5;">0%</div>
+              <div class="hero-stat-label">Penyelesaian Siswa</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="#topic-5-1" class="btn btn-primary"
+              style="padding:10px 20px; background:#4f46e5; border-color:#4f46e5;">
+              🚀 Mulai Praktik Topik 5.1
+            </a>
+            <a href="#chart-quickstart" class="btn btn-outline"
+              style="padding:10px 20px; border-color:#4f46e5; color:#4f46e5; font-weight:700;">
+              🔰 Panduan Visual & Jenis Grafik
+            </a>
+            <button class="btn btn-outline" onclick="AppCh5.openModal('datasets-modal')" style="padding:10px 20px;">
+              📥 Ambil Data Latihan (.csv)
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-banner-frame">
+          <img src="assets/hero-banner.jpg" alt="Excel Charts and Visual Analytics Illustration"
+            class="hero-banner-img">
+        </div>
+      </section>
+
+      <!-- ================= GENERAL THEORY ================= -->
+      <section class="general-theory-card">
+        <span class="section-eyebrow" style="color:#4f46e5;">General Theory</span>
+        <h2 class="section-heading">Transformasi Data Numerik Menjadi Informasi Visual & Grafis Profesional</h2>
+        <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:14px;">
+          Dalam era data modern, kemampuan mengolah angka harus diimbangi dengan keahlian <strong>Visualisasi Data (Data
+            Storytelling)</strong>. Grafik bukan sekadar hiasan lembar kerja, melainkan alat komunikasi data tercepat
+          yang memungkinkan manajer, klien, dan pemangku kepentingan memahami tren pertumbuhan, mendeteksi defisit, dan
+          membandingkan kinerja antar unit bisnis dalam sekejap.
+        </p>
+        <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:20px;">
+          Microsoft Excel menyediakan ekosistem visualisasi yang lengkap: mulai dari grafik batang dasar (<em>Column &
+            Bar</em>), pengelolaan elemen grafik via tombol <strong>Chart Elements (+)</strong>, fleksibilitas
+          pergantian sumbu data (<strong>Switch Row/Column</strong>), grafik mikro di dalam sel
+          (<strong>Sparklines</strong>), grafik kombinasi bersumbu ganda (<strong>Combo Chart & Secondary
+            Axis</strong>), hingga penambahan ilustrasi bebas seperti gambar ber-<strong>Alt Text</strong> dan
+          <strong>Text Box</strong> melayang yang mandiri dari kisi sel.
+        </p>
+
+        <h3 style="font-size:1.1rem; font-weight:700; color:#4f46e5; margin-bottom:12px;">
+          🎯 6 Standar Kompetensi Pembelajaran Chapter 5:
+        </h3>
+        <div class="competencies-grid">
+          <div class="competency-item">
+            <span><strong>1. Pembuatan Grafik Dasar & Seleksi Ctrl:</strong> Membuat grafik dari tabel data via tab
+              Insert, memilih kolom terpisah (*non-adjacent selection*) dengan tombol Ctrl, serta memindahkan grafik ke
+              lembar khusus (*Chart Sheet*) menggunakan Move Chart.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>2. Elemen Grafik & Gaya Visual:</strong> Mengelola Chart Title, Axis Titles, Data Labels,
+              Gridlines, dan Legend melalui tombol Chart Elements (+), serta menerapkan tema Chart Styles dan Chart
+              Colors.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>3. Switch Row/Column & Pembaruan Otomatis:</strong> Menukar orientasi Kategori (Sumbu X) dan
+              Seri Data (Legenda) secara instan, serta membuktikan bahwa grafik terhubung dinamis (*live-linked*) saat
+              data sumber diedit.</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>4. Row-Level Sparklines:</strong> Menyisipkan grafik mini di dalam sel (Line, Column,
+              Win/Loss) untuk memantau tren fluktuasi dan memformat penanda titik kritis (High/Low/Negative
+              Points).</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>5. Mengubah Tipe Grafik & Combo Chart:</strong> Mengonversi tipe grafik (Change Chart Type),
+              membuat Combo Chart dengan Secondary Axis untuk memadukan nominal Rupiah dan Persentase (%), serta
+              memanfaatkan Quick Layout dan trik Snap to Grid (Alt + Drag).</span>
+          </div>
+          <div class="competency-item">
+            <span><strong>6. Objek Visual (Gambar & Text Box):</strong> Menyisipkan gambar dengan Alt Text untuk standar
+              aksesibilitas digital, serta menempatkan Text Box transparan bebas garis untuk kartu kesimpulan eksekutif
+              (*callout cards*).</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PANDUAN VISUAL & JENIS GRAFIK ================= -->
+      <section class="beginner-guide-card" id="chart-quickstart">
+        <div class="beginner-guide-badge"
+          style="background:rgba(79, 70, 229, 0.15); color:#4f46e5; border-color:rgba(79, 70, 229, 0.3);">
+          🔰 Panduan Cepat Visualisasi • Kenali Tipe Grafik & Aturan Desain
+        </div>
+        <h2 class="beginner-guide-title">
+          Fondasi Memilih Jenis Grafik yang Tepat Sesuai Karakter Data
+        </h2>
+        <p class="beginner-guide-intro">
+          Kesalahan terbesar pemula dalam membuat grafik adalah memilih tipe visual yang salah (misal memakai Pie Chart
+          untuk data berisi puluhan kategori). Pelajari panduan praktis berikut agar laporan grafik kamu selalu efektif:
+        </p>
+
+        <!-- Chart Types Grid -->
+        <div class="chart-types-grid">
+          <div class="chart-type-pill">
+            <div class="chart-type-icon">📊</div>
+            <div>
+              <div class="chart-type-title">Column Chart (Batang Tegak)</div>
+              <div class="chart-type-desc">Terbaik untuk membandingkan nominal antar kategori diskrit (misal: Penjualan
+                per Cabang).</div>
+            </div>
+          </div>
+
+          <div class="chart-type-pill">
+            <div class="chart-type-icon">📈</div>
+            <div>
+              <div class="chart-type-title">Line Chart (Grafik Garis)</div>
+              <div class="chart-type-desc">Terbaik untuk menampilkan tren fluktuasi kontinyu dari waktu ke waktu (Bulan,
+                Kuartal, Tahun).</div>
+            </div>
+          </div>
+
+          <div class="chart-type-pill">
+            <div class="chart-type-icon">↔️</div>
+            <div>
+              <div class="chart-type-title">Bar Chart (Batang Mendatar)</div>
+              <div class="chart-type-desc">Terbaik jika nama label kategori sangat panjang agar teks tidak miring atau
+                bertabrakan.</div>
+            </div>
+          </div>
+
+          <div class="chart-type-pill">
+            <div class="chart-type-icon">🥧</div>
+            <div>
+              <div class="chart-type-title">Pie Chart (Diagram Lingkaran)</div>
+              <div class="chart-type-desc">Hanya gunakan untuk melihat proporsi bagian terhadap 100% total, dengan
+                maksimal 5-7 potongan!</div>
+            </div>
+          </div>
+
+          <div class="chart-type-pill">
+            <div class="chart-type-icon">🔀</div>
+            <div>
+              <div class="chart-type-title">Combo Chart (Sumbu Ganda)</div>
+              <div class="chart-type-desc">Menggabungkan Batang (Volume) dan Garis (Margin %) menggunakan Secondary
+                Axis.</div>
+            </div>
+          </div>
+
+          <div class="chart-type-pill">
+            <div class="chart-type-icon">📉</div>
+            <div>
+              <div class="chart-type-title">Sparklines (Grafik Sel)</div>
+              <div class="chart-type-desc">Grafik mikro tanpa sumbu di dalam sel tunggal untuk memantau puluhan baris
+                data sekaligus.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Golden Rules for Excel Charts -->
+        <div class="beginner-rules-grid">
+          <div class="beginner-rule-card">
+            <div class="rule-card-header">
+              <div class="rule-card-icon" style="color:#ef4444; background:#fee2e2;">🚫</div>
+              <div class="rule-card-title">1. Jangan Blok Baris Total</div>
+            </div>
+            <div class="rule-card-desc">
+              Hanya blok baris rincian data! Jika angka Grand Total ikut terblok, batang total akan menjulang sangat
+              tinggi dan menenggelamkan batang data lainnya sehingga skala grafik menjadi rusak.
+            </div>
+            <code class="rule-card-code" style="color:#ef4444;">Hindari: Memblok baris Total / Summary</code>
+          </div>
+
+          <div class="beginner-rule-card">
+            <div class="rule-card-header">
+              <div class="rule-card-icon" style="color:#4f46e5; background:#e0e7ff;">Ctrl</div>
+              <div class="rule-card-title">2. Tahan Ctrl untuk Kolom Terpisah</div>
+            </div>
+            <div class="rule-card-desc">
+              Jika ingin membuat grafik dari Kolom A (Nama) dan Kolom D (Omzet) tanpa mengikutsertakan Kolom B & C, blok
+              Kolom A lalu <strong>tahan Ctrl</strong> saat memblok Kolom D.
+            </div>
+            <code class="rule-card-code" style="color:#4f46e5;">Pintasan: Tahan tombol Ctrl saat seleksi</code>
+          </div>
+
+          <div class="beginner-rule-card">
+            <div class="rule-card-header">
+              <div class="rule-card-icon" style="color:#107c41; background:#dcfce7;">+</div>
+              <div class="rule-card-title">3. Tombol Sakti [+] Chart Elements</div>
+            </div>
+            <div class="rule-card-desc">
+              Klik grafik untuk memunculkan tombol tambah hijau di pojok kanan atas. Centang <strong>Data
+                Labels</strong> untuk menampilkan angka pasti di atas batang dan <strong>Axis Titles</strong> untuk
+              satuan ukur.
+            </div>
+            <code class="rule-card-code" style="color:#107c41;">Akses: Tombol [+] Hijau di Sudut Grafik</code>
+          </div>
+
+          <div class="beginner-rule-card">
+            <div class="rule-card-header">
+              <div class="rule-card-icon" style="color:#d97706; background:#fef3c7;">Alt</div>
+              <div class="rule-card-title">4. Trik Snap to Grid (Alt + Drag)</div>
+            </div>
+            <div class="rule-card-desc">
+              Tahan tombol <strong>Alt</strong> saat menggeser atau mengubah ukuran grafik dengan mouse. Tepi bingkai
+              grafik akan otomatis menempel rapi pada garis kisi sel Excel!
+            </div>
+            <code class="rule-card-code" style="color:#d97706;">Pintasan: Tahan Alt saat geser/resize</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 6 TOPICS CONTAINER ================= -->
+      <section class="topic-container" id="topics-render-container">
+        <!-- Injected dynamically by js/app-ch5.js: Topic 5.1 to Topic 5.6 -->
+      </section>
+
+      <!-- ================= QUIZ & EVALUATION SECTION ================= -->
+      <section class="quiz-section-card" id="quiz-section">
+        <div
+          style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <span class="section-eyebrow" style="color:#4f46e5;">Evaluasi Formatif</span>
+            <h2 class="section-heading">Kuis Praktik Pemahaman Siswa: Chapter 5</h2>
+            <p style="font-size:0.92rem; color:var(--text-muted);">
+              Uji penguasaan standar kompetensi visualisasi data, jenis grafik, tombol Chart Elements, Sparklines, dan
+              objek visual (KKM 75):
+            </p>
+          </div>
+          <button class="btn btn-outline" onclick="AppCh5.resetQuiz()" style="font-size:0.82rem;">
+            ↺ Reset Kuis
+          </button>
+        </div>
+
+        <div id="quiz-questions-container">
+          <!-- Injected dynamically by js/app-ch5.js -->
+        </div>
+
+        <div style="text-align:center; margin-top:24px;">
+          <button class="btn btn-primary" id="btn-submit-quiz"
+            style="padding:12px 32px; font-size:1rem; font-weight:800; background:#4f46e5; border-color:#4f46e5;">
+            📤 Kirim Jawaban & Lihat Skor Evaluasi
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= MODAL: SHORTCUTS CHEAT SHEET ================= -->
+  <div class="modal-overlay" id="shortcuts-modal">
+    <div class="modal-box" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color:#4f46e5; display:flex; align-items:center; gap:8px;">
+          <span>⌨️</span> Shortcut Hub: Pintasan Keyboard Grafik & Objek Visual
+        </h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+          Kuasai tombol pintasan keyboard berikut untuk bekerja lebih cepat layaknya analis data profesional:
+        </p>
+        <table class="shortcut-table">
+          <thead>
+            <tr>
+              <th>Fitur / Aksi</th>
+              <th>Pintasan Windows</th>
+              <th>Fungsi Utama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Insert Embedded Chart</strong></td>
+              <td><kbd>Alt</kbd> + <kbd>F1</kbd></td>
+              <td>Membuat grafik 2-D Clustered Column seketika di samping tabel pada sheet aktif</td>
+            </tr>
+            <tr>
+              <td><strong>Insert Chart Sheet</strong></td>
+              <td><kbd>F11</kbd></td>
+              <td>Membuat grafik otomatis pada lembar kerja grafik khusus mandiri (Chart1)</td>
+            </tr>
+            <tr>
+              <td><strong>Snap to Grid (Align)</strong></td>
+              <td><kbd>Alt</kbd> + Drag Mouse</td>
+              <td>Menyelaraskan batas tepi dan sudut grafik agar menempel presisi di garis kisi sel</td>
+            </tr>
+            <tr>
+              <td><strong>Select Non-Adjacent Columns</strong></td>
+              <td>Tahan <kbd>Ctrl</kbd> + Klik Mouse</td>
+              <td>Memilih dua kolom terpisah (misal Kolom A dan D) tanpa memilih kolom di tengahnya</td>
+            </tr>
+            <tr>
+              <td><strong>Proportional Resize</strong></td>
+              <td>Tahan <kbd>Shift</kbd> + Drag Sudut</td>
+              <td>Mengubah ukuran grafik atau gambar dengan mengunci rasio aspek agar tidak gepeng</td>
+            </tr>
+            <tr>
+              <td><strong>Insert Picture Dialog</strong></td>
+              <td><kbd>Alt</kbd> ➔ <kbd>N</kbd> ➔ <kbd>P</kbd></td>
+              <td>Membuka dialog penyisipan gambar dari komputer atau sumber online</td>
+            </tr>
+            <tr>
+              <td><strong>Insert Text Box</strong></td>
+              <td><kbd>Alt</kbd> ➔ <kbd>N</kbd> ➔ <kbd>X</kbd></td>
+              <td>Mengaktifkan kursor untuk menggambar kotak teks melayang bebas</td>
+            </tr>
+            <tr>
+              <td><strong>Move or Copy Sheet</strong></td>
+              <td>Klik kanan Tab Sheet ➔ Move</td>
+              <td>Mengatur urutan lembar kerja atau memindahkan chart sheet ke file workbook lain</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: PRACTICE DATASETS ================= -->
+  <div class="modal-overlay" id="datasets-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">📂 Bank Data Latihan Siswa (Practice Datasets Chapter 5)</h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+          Gunakan dataset siap pakai berikut untuk latihan di Microsoft Excel desktop atau tugas portofolio kelas:
+        </p>
+        <div id="datasets-list-container">
+          <!-- Injected dynamically by js/app-ch5.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: QUIZ RESULT ================= -->
+  <div class="modal-overlay" id="quiz-result-modal">
+    <div class="modal-box" id="quiz-result-modal-box">
+      <!-- Injected dynamically by js/app-ch5.js -->
+    </div>
+  </div>
+
+  <!-- ================= MODAL: COPY SUCCESS & EXCEL PASTE GUIDE ================= -->
+  <div class="modal-overlay" id="copy-success-modal">
+    <div class="modal-box" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color:#4f46e5; display:flex; align-items:center; gap:8px;">
+          <span>📋</span> Tabel & Desain Siap Ditempel ke Excel!
+        </h3>
+        <button class="btn-icon modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="copy-success-modal-body">
+        <!-- Injected dynamically by js/app-ch5.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TEACHER PRESENTATION OVERLAY ================= -->
+  <div id="presentation-overlay">
+    <!-- Pres Topbar -->
+    <div class="pres-topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-weight:800; font-family:var(--font-heading); color:#818cf8;">📽️ MODE SLIDE PEMBELAJARAN BAB
+          5</span>
+        <span style="font-size:0.8rem; background:#1e293b; color:#94a3b8; padding:3px 10px; border-radius:4px;">
+          Gunakan Tombol Panah [ ← / → ] atau Space
+        </span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="btn btn-outline" id="btn-pres-laser"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;"
+          title="Nyalakan Laser Pointer Virtual (Tekan L)">
+          🔴 Laser Pointer (L)
+        </button>
+        <button class="btn btn-outline" id="btn-pres-close"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
+          ✕ Tutup Presentasi (Esc)
+        </button>
+      </div>
+    </div>
+
+    <!-- Pres Slide Viewport -->
+    <div class="pres-slide-viewport">
+      <div id="pres-slide-render">
+        <!-- Injected by js/presentation-mode-ch5.js -->
+      </div>
+    </div>
+
+    <!-- Pres Footer Navigation -->
+    <div class="pres-footer-bar">
+      <button class="btn btn-outline" id="btn-pres-prev" style="color:white; border-color:#334155;">
+        ← Slide Sebelumnya
+      </button>
+
+      <div id="pres-slide-counter"
+        style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#818cf8;">
+        1 / 9
+      </div>
+
+      <button class="btn btn-primary" id="btn-pres-next" style="background:#4f46e5; border-color:#4f46e5;">
+        Slide Berikutnya →
+      </button>
+    </div>
+  </div>
+
+  <!-- Virtual Laser Pointer Element -->
+  <div class="laser-pointer-dot" id="laser-pointer-dot"></div>
+
+  <!-- Scripts -->
+  <script src="js/data-ch5.js?v=5.0"></script>
+  <script src="js/spreadsheet-simulators-ch5.js?v=5.0"></script>
+  <script src="js/presentation-mode-ch5.js?v=5.0"></script>
+  <script src="js/app-ch5.js?v=5.0"></script>
+</body>
+
+</html>

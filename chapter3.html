@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modul ICT Excel: Chapter 3 - Tables, Table Styles, Subtotals, & Data Formatting</title>
-  <meta name="description" content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 3: Tables, Table Styles, Subtotals, Icon Sets, Data Bars, dan Sparklines.">
-  <meta name="keywords" content="Tutorial Excel, ICT Excel, Belajar Excel, Excel Table, Table Styles, Total Row, Subtotals, Icon Sets, Data Bars, Sparklines, AutoFit, Print Titles">
+  <meta name="description"
+    content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 3: Tables, Table Styles, Subtotals, Icon Sets, Data Bars, dan Sparklines.">
+  <meta name="keywords"
+    content="Tutorial Excel, ICT Excel, Belajar Excel, Excel Table, Table Styles, Total Row, Subtotals, Icon Sets, Data Bars, Sparklines, AutoFit, Print Titles">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=3.1">
   <link rel="stylesheet" href="css/excel-components.css?v=3.1">
 </head>
+
 <body>
 
   <!-- ================= TOPBAR ================= -->
@@ -28,14 +32,20 @@
     <div class="topbar-actions">
       <!-- Chapter Navigation -->
       <div class="chapter-nav-pills" style="display:flex; gap:4px; align-items:center; margin-right:8px;">
-        <a href="index.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+        <a href="index.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
           📘 Ch.2
         </a>
         <span class="btn btn-primary" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default;">
           📗 Ch.3
         </span>
-        <a href="chapter4.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+        <a href="chapter4.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
           📙 Ch.4
+        </a>
+        <a href="chapter5.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📊 Ch.5
         </a>
       </div>
 
@@ -43,8 +53,11 @@
       <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
         <span class="timer-dot"></span>
         <span id="timer-countdown">90:00</span>
-        <button id="btn-timer-toggle" style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;" title="Mulai / Jeda Timer">▶</button>
-        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;" title="Reset Timer (90 Menit)">↺</button>
+        <button id="btn-timer-toggle"
+          style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;"
+          title="Mulai / Jeda Timer">▶</button>
+        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;"
+          title="Reset Timer (90 Menit)">↺</button>
       </div>
 
       <!-- Slideshow Presentation Mode Button -->
@@ -80,15 +93,22 @@
 
         <!-- Chapter Switcher in Sidebar -->
         <div style="display:flex; gap:4px; margin-bottom:12px;">
-          <a href="index.html" style="flex:1; text-decoration:none; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
-            📘 Ch.2
-          </a>
-          <span style="flex:1; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--excel-green); color:white; border:1px solid var(--excel-green);">
-            📗 Ch.3
-          </span>
-          <a href="chapter4.html" style="flex:1; text-decoration:none; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
-            📙 Ch.4
-          </a>
+            <a href="index.html"
+              style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+              📘 Ch.2
+            </a>
+              <span
+                style="flex:1; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--excel-green); color:white; border:1px solid var(--excel-green);">
+                📗 Ch.3
+              </span>
+                <a href="chapter4.html"
+                  style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                  📙 Ch.4
+                </a>
+                <a href="chapter5.html"
+                  style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                  📊 Ch.5
+                </a>
         </div>
 
         <div class="progress-card">
@@ -107,8 +127,10 @@
         <!-- Rendered by js/app-ch3.js -->
       </ul>
 
-      <div style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
-        💡 <strong>Panduan Belajar:</strong> Klik tombol <em>"Tandai Selesai"</em> di setiap akhir topik setelah kamu berhasil mempraktikkan langkah-langkahnya di Microsoft Excel!
+      <div
+        style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
+        💡 <strong>Panduan Belajar:</strong> Klik tombol <em>"Tandai Selesai"</em> di setiap akhir topik setelah kamu
+        berhasil mempraktikkan langkah-langkahnya di Microsoft Excel!
       </div>
     </aside>
 
@@ -123,7 +145,9 @@
             Tables, Table Styles, Subtotals, & Data Formatting
           </h1>
           <p class="hero-subtitle">
-            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai teknik membuat Excel Table, menerapkan Table Styles & Total Row, menghitung Subtotal bertingkat, serta memvisualisasikan data menggunakan Icon Sets, Data Bars, dan Sparklines di Microsoft Excel komputer kamu.
+            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai teknik membuat Excel Table,
+            menerapkan Table Styles & Total Row, menghitung Subtotal bertingkat, serta memvisualisasikan data
+            menggunakan Icon Sets, Data Bars, dan Sparklines di Microsoft Excel komputer kamu.
           </p>
 
           <div class="hero-meta-grid">
@@ -161,10 +185,15 @@
         <span class="section-eyebrow">General Theory</span>
         <h2 class="section-heading">Pengantar Tabel, Subtotal, dan Pemformatan Data Visual</h2>
         <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:14px;">
-          Dalam pengelolaan data profesional, mengubah rentang data biasa menjadi <strong>Excel Table</strong> memberikan keuntungan luar biasa: filter otomatis, referensi terstruktur, perluasan otomatis, dan gaya visual siap pakai. Fitur <strong>Table Styles</strong> dan <strong>Total Row</strong> memungkinkan kalkulasi ringkasan tanpa menulis rumus manual.
+          Dalam pengelolaan data profesional, mengubah rentang data biasa menjadi <strong>Excel Table</strong>
+          memberikan keuntungan luar biasa: filter otomatis, referensi terstruktur, perluasan otomatis, dan gaya visual
+          siap pakai. Fitur <strong>Table Styles</strong> dan <strong>Total Row</strong> memungkinkan kalkulasi
+          ringkasan tanpa menulis rumus manual.
         </p>
         <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:20px;">
-          Untuk data yang lebih kompleks, fitur <strong>Subtotal</strong> menghitung ringkasan otomatis per grup data bertingkat, sementara <strong>Icon Sets</strong>, <strong>Data Bars</strong>, dan <strong>Sparklines</strong> memberikan visualisasi cepat langsung di dalam sel tanpa perlu membuat grafik terpisah.
+          Untuk data yang lebih kompleks, fitur <strong>Subtotal</strong> menghitung ringkasan otomatis per grup data
+          bertingkat, sementara <strong>Icon Sets</strong>, <strong>Data Bars</strong>, dan <strong>Sparklines</strong>
+          memberikan visualisasi cepat langsung di dalam sel tanpa perlu membuat grafik terpisah.
         </p>
 
         <h3 style="font-size:1.1rem; font-weight:700; color:var(--excel-green); margin-bottom:12px;">
@@ -172,22 +201,28 @@
         </h3>
         <div class="competencies-grid">
           <div class="competency-item">
-            <span><strong>1. Manajemen Kolom:</strong> Menghapus kolom yang tidak diperlukan dan mengatur lebar kolom otomatis menggunakan AutoFit Column Width.</span>
+            <span><strong>1. Manajemen Kolom:</strong> Menghapus kolom yang tidak diperlukan dan mengatur lebar kolom
+              otomatis menggunakan AutoFit Column Width.</span>
           </div>
           <div class="competency-item">
-            <span><strong>2. Pengaturan Cetak:</strong> Mengkonfigurasi Print Titles untuk mengulang baris header dan mengaktifkan Gridlines pada halaman cetak.</span>
+            <span><strong>2. Pengaturan Cetak:</strong> Mengkonfigurasi Print Titles untuk mengulang baris header dan
+              mengaktifkan Gridlines pada halaman cetak.</span>
           </div>
           <div class="competency-item">
-            <span><strong>3. Excel Table:</strong> Membuat tabel terstruktur (Ctrl+T) dengan filter otomatis, auto expansion, dan structured references.</span>
+            <span><strong>3. Excel Table:</strong> Membuat tabel terstruktur (Ctrl+T) dengan filter otomatis, auto
+              expansion, dan structured references.</span>
           </div>
           <div class="competency-item">
-            <span><strong>4. Table Styles & Total Row:</strong> Menerapkan gaya visual tabel dan baris ringkasan otomatis dengan fungsi Sum, Average, Count, dan Max.</span>
+            <span><strong>4. Table Styles & Total Row:</strong> Menerapkan gaya visual tabel dan baris ringkasan
+              otomatis dengan fungsi Sum, Average, Count, dan Max.</span>
           </div>
           <div class="competency-item">
-            <span><strong>5. Multi-Level Subtotals:</strong> Menghitung ringkasan bertingkat per grup data pada tabel yang telah diurutkan, lengkap dengan Outline Levels.</span>
+            <span><strong>5. Multi-Level Subtotals:</strong> Menghitung ringkasan bertingkat per grup data pada tabel
+              yang telah diurutkan, lengkap dengan Outline Levels.</span>
           </div>
           <div class="competency-item">
-            <span><strong>6. Visualisasi Data:</strong> Menerapkan Icon Sets, Data Bars, dan Sparklines (Line & Win/Loss) untuk visualisasi data langsung di dalam sel.</span>
+            <span><strong>6. Visualisasi Data:</strong> Menerapkan Icon Sets, Data Bars, dan Sparklines (Line &
+              Win/Loss) untuk visualisasi data langsung di dalam sel.</span>
           </div>
         </div>
       </section>
@@ -204,7 +239,8 @@
           <span class="section-eyebrow">Evaluasi Formatif</span>
           <h2 class="section-heading" style="font-size:2.1rem;">Kuis Evaluasi Pemahaman Siswa</h2>
           <p style="color:var(--text-muted); font-size:1rem;">
-            Uji pemahaman komprehensif Anda mengenai 6 topik Chapter 3. Setiap soal berbasis studi kasus nyata yang sering ditemui di dunia administrasi dan pengolahan data.
+            Uji pemahaman komprehensif Anda mengenai 6 topik Chapter 3. Setiap soal berbasis studi kasus nyata yang
+            sering ditemui di dunia administrasi dan pengolahan data.
           </p>
         </div>
 
@@ -212,7 +248,9 @@
         <div class="quiz-progress-banner" id="quiz-progress-banner">
           <div class="quiz-progress-meta">
             <span id="quiz-progress-text">Progres Pengerjaan: 0 / 6 Soal Terjawab (0%)</span>
-            <span id="quiz-badge-status" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status: Belum Dikumpulkan</span>
+            <span id="quiz-badge-status"
+              style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status:
+              Belum Dikumpulkan</span>
           </div>
           <div class="quiz-progress-track">
             <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
@@ -234,13 +272,16 @@
       </section>
 
       <!-- ================= FOOTER ================= -->
-      <footer style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
+      <footer
+        style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
         <p><strong>Modul Pembelajaran ICT - Microsoft Excel Chapter 3</strong></p>
         <p style="margin-top:4px;">Dirancang khusus sebagai Modul Interaktif dan Panduan Praktik Mandiri Siswa.</p>
         <p style="margin-top:8px; display:flex; justify-content:center; gap:16px;">
-          <a href="index.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke Chapter 2</a>
+          <a href="index.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke
+            Chapter 2</a>
           <span>•</span>
-          <a href="chapter4.html" style="color:#d97706; text-decoration:none; font-weight:600;">Lanjut ke Chapter 4: Formulas & Functions →</a>
+          <a href="chapter4.html" style="color:#d97706; text-decoration:none; font-weight:600;">Lanjut ke Chapter 4:
+            Formulas & Functions →</a>
         </p>
       </footer>
 
@@ -358,17 +399,21 @@
     <!-- Pres Topbar -->
     <div class="pres-topbar">
       <div style="display:flex; align-items:center; gap:12px;">
-        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE PEMBELAJARAN</span>
+        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE
+          PEMBELAJARAN</span>
         <span style="font-size:0.8rem; background:#1e293b; color:#94a3b8; padding:3px 10px; border-radius:4px;">
           Gunakan Tombol Panah [ ← / → ] atau Space
         </span>
       </div>
 
       <div style="display:flex; align-items:center; gap:12px;">
-        <button class="btn btn-outline" id="btn-pres-laser" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;" title="Nyalakan Laser Pointer Virtual (Tekan L)">
+        <button class="btn btn-outline" id="btn-pres-laser"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;"
+          title="Nyalakan Laser Pointer Virtual (Tekan L)">
           🔴 Laser Pointer (L)
         </button>
-        <button class="btn btn-outline" id="btn-pres-close" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
+        <button class="btn btn-outline" id="btn-pres-close"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
           ✕ Tutup Presentasi (Esc)
         </button>
       </div>
@@ -387,7 +432,8 @@
         ← Slide Sebelumnya
       </button>
 
-      <div id="pres-slide-counter" style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
+      <div id="pres-slide-counter"
+        style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
         1 / 9
       </div>
 
@@ -406,4 +452,5 @@
   <script src="js/presentation-mode-ch3.js?v=3.1"></script>
   <script src="js/app-ch3.js?v=3.1"></script>
 </body>
+
 </html>

@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modul ICT Excel: Chapter 4 - Excel Formulas and Functions</title>
-  <meta name="description" content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 4: Formula Structure, Cell References (Absolute $A$1), MAX, MIN, AVERAGE, LARGE, COUNT, COUNTA, COUNTIFS, SUMIFS, Text Functions (&, TEXTJOIN, PROPER), Logical IF, dan Show Formulas (Ctrl+`).">
-  <meta name="keywords" content="Tutorial Excel, ICT Excel, Belajar Excel, Formula Excel, Rumus Excel, Absolute Reference, Relatif Absolut F4, MAX MIN AVERAGE, LARGE, COUNT vs COUNTA, COUNTIFS, SUMIFS, TEXTJOIN, PROPER, Logical IF, Nested IF, Show Formulas Ctrl Backtick">
+  <meta name="description"
+    content="Platform tutorial interaktif dan modul praktik mandiri siswa untuk Microsoft Excel Chapter 4: Formula Structure, Cell References (Absolute $A$1), MAX, MIN, AVERAGE, LARGE, COUNT, COUNTA, COUNTIFS, SUMIFS, Text Functions (&, TEXTJOIN, PROPER), Logical IF, dan Show Formulas (Ctrl+`).">
+  <meta name="keywords"
+    content="Tutorial Excel, ICT Excel, Belajar Excel, Formula Excel, Rumus Excel, Absolute Reference, Relatif Absolut F4, MAX MIN AVERAGE, LARGE, COUNT vs COUNTA, COUNTIFS, SUMIFS, TEXTJOIN, PROPER, Logical IF, Nested IF, Show Formulas Ctrl Backtick">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=4.3">
   <link rel="stylesheet" href="css/excel-components.css?v=4.3">
 </head>
+
 <body>
 
   <!-- ================= TOPBAR ================= -->
@@ -28,23 +32,33 @@
     <div class="topbar-actions">
       <!-- Chapter Navigation -->
       <div class="chapter-nav-pills" style="display:flex; gap:4px; align-items:center; margin-right:8px;">
-        <a href="index.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+        <a href="index.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
           📘 Ch.2
         </a>
-        <a href="chapter3.html" class="btn btn-outline" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+        <a href="chapter3.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
           📗 Ch.3
         </a>
-        <span class="btn btn-primary" style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default; background:#d97706; border-color:#d97706;">
+        <span class="btn btn-primary"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; cursor:default; background:#d97706; border-color:#d97706;">
           📙 Ch.4
         </span>
+        <a href="chapter5.html" class="btn btn-outline"
+          style="padding:5px 12px; font-size:0.78rem; border-radius:6px; text-decoration:none;">
+          📊 Ch.5
+        </a>
       </div>
 
       <!-- Classroom Timer -->
       <div class="class-timer-badge" title="Pacing Timer Praktik Mandiri">
         <span class="timer-dot"></span>
         <span id="timer-countdown">90:00</span>
-        <button id="btn-timer-toggle" style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;" title="Mulai / Jeda Timer">▶</button>
-        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;" title="Reset Timer (90 Menit)">↺</button>
+        <button id="btn-timer-toggle"
+          style="background:none; border:none; cursor:pointer; font-size:0.8rem; margin-left:4px;"
+          title="Mulai / Jeda Timer">▶</button>
+        <button id="btn-timer-reset" style="background:none; border:none; cursor:pointer; font-size:0.8rem;"
+          title="Reset Timer (90 Menit)">↺</button>
       </div>
 
       <!-- Slideshow Presentation Mode Button -->
@@ -80,15 +94,22 @@
 
         <!-- Chapter Switcher in Sidebar -->
         <div style="display:flex; gap:4px; margin-bottom:12px;">
-          <a href="index.html" style="flex:1; text-decoration:none; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
-            📘 Ch.2
-          </a>
-          <a href="chapter3.html" style="flex:1; text-decoration:none; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
-            📗 Ch.3
-          </a>
-          <span style="flex:1; padding:7px 6px; border-radius:6px; text-align:center; font-size:0.75rem; font-weight:700; background:#d97706; color:white; border:1px solid #d97706;">
-            📙 Ch.4
-          </span>
+            <a href="index.html"
+              style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+              📘 Ch.2
+            </a>
+              <a href="chapter3.html"
+                style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                📗 Ch.3
+              </a>
+                <span
+                  style="flex:1; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:#d97706; color:white; border:1px solid #d97706;">
+                  📙 Ch.4
+                </span>
+                <a href="chapter5.html"
+                  style="flex:1; text-decoration:none; padding:7px 5px; border-radius:6px; text-align:center; font-size:0.74rem; font-weight:700; background:var(--bg-subtle); color:var(--text-muted); border:1px solid var(--border-color); transition:all 0.2s;">
+                  📊 Ch.5
+                </a>
         </div>
 
         <div class="progress-card">
@@ -107,8 +128,15 @@
         <!-- Rendered by js/app-ch4.js -->
       </ul>
 
-      <div style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
-        💡 <strong>Tips Sukses Praktik:</strong> Kuasai penggunaan tombol <kbd style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">F4</kbd> untuk mengunci sel absolut dan tombol <kbd style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">Ctrl</kbd> + <kbd style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">`</kbd> untuk memeriksa formula!
+      <div
+        style="margin-top:24px; padding:14px; background:var(--bg-subtle); border-radius:var(--radius-md); font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border-color);">
+        💡 <strong>Tips Sukses Praktik:</strong> Kuasai penggunaan tombol <kbd
+          style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">F4</kbd>
+        untuk mengunci sel absolut dan tombol <kbd
+          style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">Ctrl</kbd>
+        + <kbd
+          style="background:var(--bg-surface); padding:1px 5px; border-radius:3px; border:1px solid var(--border-color); font-weight:700;">`</kbd>
+        untuk memeriksa formula!
       </div>
     </aside>
 
@@ -118,14 +146,18 @@
       <!-- ================= HERO SECTION ================= -->
       <section class="hero-card" id="overview">
         <div>
-          <span class="hero-tag" style="background:rgba(217, 119, 6, 0.15); color:#d97706; border-color:rgba(217, 119, 6, 0.3);">
+          <span class="hero-tag"
+            style="background:rgba(217, 119, 6, 0.15); color:#d97706; border-color:rgba(217, 119, 6, 0.3);">
             Modul ICT Resmi • Bab 4
           </span>
           <h1 class="hero-title">
             Excel Formulas and Functions
           </h1>
           <p class="hero-subtitle">
-            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai struktur sintaks rumus, referensi sel relatif vs absolut ($A$1) dengan tombol F4, fungsi statistik dasar (MAX, MIN, AVERAGE, LARGE, COUNT vs COUNTA), agregasi multi-kriteria bersyarat (COUNTIFS & SUMIFS), manipulasi teks (&, TEXTJOIN, PROPER), logika IF & Fill Down, serta teknik Formula Auditing menggunakan fitur Show Formulas (Ctrl+`).
+            Modul pembelajaran interaktif dan panduan praktik mandiri siswa: kuasai struktur sintaks rumus, referensi
+            sel relatif vs absolut ($A$1) dengan tombol F4, fungsi statistik dasar (MAX, MIN, AVERAGE, LARGE, COUNT vs
+            COUNTA), agregasi multi-kriteria bersyarat (COUNTIFS & SUMIFS), manipulasi teks (&, TEXTJOIN, PROPER),
+            logika IF & Fill Down, serta teknik Formula Auditing menggunakan fitur Show Formulas (Ctrl+`).
           </p>
 
           <div class="hero-meta-grid">
@@ -144,10 +176,12 @@
           </div>
 
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="#topic-4-1" class="btn btn-primary" style="padding:10px 20px; background:#d97706; border-color:#d97706;">
+            <a href="#topic-4-1" class="btn btn-primary"
+              style="padding:10px 20px; background:#d97706; border-color:#d97706;">
               🚀 Mulai Praktik Topik 4.1
             </a>
-            <a href="#beginner-quickstart" class="btn btn-outline" style="padding:10px 20px; border-color:#d97706; color:#d97706; font-weight:700;">
+            <a href="#beginner-quickstart" class="btn btn-outline"
+              style="padding:10px 20px; border-color:#d97706; color:#d97706; font-weight:700;">
               🔰 Panduan Kilat Pemula
             </a>
             <button class="btn btn-outline" onclick="App.openModal('datasets-modal')" style="padding:10px 20px;">
@@ -157,7 +191,8 @@
         </div>
 
         <div class="hero-banner-frame">
-          <img src="assets/hero-banner.jpg" alt="Excel Formulas and Functions Dashboard Illustration" class="hero-banner-img">
+          <img src="assets/hero-banner.jpg" alt="Excel Formulas and Functions Dashboard Illustration"
+            class="hero-banner-img">
         </div>
       </section>
 
@@ -166,10 +201,18 @@
         <span class="section-eyebrow">General Theory</span>
         <h2 class="section-heading">Fondasi Kalkulasi, Fungsi Logika, Agregasi, & Audit Rumus Excel</h2>
         <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:14px;">
-          Formula dan fungsi adalah inti dari keandalan Microsoft Excel. Sebuah rumus selalu diawali dengan tanda sama dengan (<code>=</code>) dan memadukan operator aritmatika, nama fungsi, serta referensi sel. Perbedaan pemahaman antara <strong>Referensi Relatif</strong> (seperti <code>A1</code> yang berubah saat disalin) dan <strong>Referensi Absolut</strong> (seperti <code>$A$1</code> yang selalu terkunci pada sel parameter tetap) menjadi garis pemisah utama antara pengguna pemula dan profesional.
+          Formula dan fungsi adalah inti dari keandalan Microsoft Excel. Sebuah rumus selalu diawali dengan tanda sama
+          dengan (<code>=</code>) dan memadukan operator aritmatika, nama fungsi, serta referensi sel. Perbedaan
+          pemahaman antara <strong>Referensi Relatif</strong> (seperti <code>A1</code> yang berubah saat disalin) dan
+          <strong>Referensi Absolut</strong> (seperti <code>$A$1</code> yang selalu terkunci pada sel parameter tetap)
+          menjadi garis pemisah utama antara pengguna pemula dan profesional.
         </p>
         <p style="font-size:0.96rem; line-height:1.7; color:var(--text-main); margin-bottom:20px;">
-          Fungsi modern seperti <strong>COUNTIFS</strong> dan <strong>SUMIFS</strong> memungkinkan kita menghitung data secara bersyarat berdasarkan nilai sel aktual, sehingga kalkulasi tetap presisi meski data diacak atau di-sort. Ditambah kemampuan membersihkan data teks (<code>PROPER</code>, <code>TEXTJOIN</code>), pengambilan keputusan otomatis dengan <code>IF</code>, serta fitur audit <code>Show Formulas</code> (<strong>Ctrl+`</strong>), Chapter 4 membekali siswa dengan kompetensi esensial pengolahan data masa depan.
+          Fungsi modern seperti <strong>COUNTIFS</strong> dan <strong>SUMIFS</strong> memungkinkan kita menghitung data
+          secara bersyarat berdasarkan nilai sel aktual, sehingga kalkulasi tetap presisi meski data diacak atau
+          di-sort. Ditambah kemampuan membersihkan data teks (<code>PROPER</code>, <code>TEXTJOIN</code>), pengambilan
+          keputusan otomatis dengan <code>IF</code>, serta fitur audit <code>Show Formulas</code>
+          (<strong>Ctrl+`</strong>), Chapter 4 membekali siswa dengan kompetensi esensial pengolahan data masa depan.
         </p>
 
         <h3 style="font-size:1.1rem; font-weight:700; color:var(--excel-green); margin-bottom:12px;">
@@ -177,22 +220,31 @@
         </h3>
         <div class="competencies-grid">
           <div class="competency-item">
-            <span><strong>1. Struktur Rumus & Referensi Sel:</strong> Memahami awalan tanda sama dengan (=), perbedaan referensi Relatif (A1), Absolut ($A$1), Campuran ($A1 / A$1), serta penggunaan tombol sakti F4.</span>
+            <span><strong>1. Struktur Rumus & Referensi Sel:</strong> Memahami awalan tanda sama dengan (=), perbedaan
+              referensi Relatif (A1), Absolut ($A$1), Campuran ($A1 / A$1), serta penggunaan tombol sakti F4.</span>
           </div>
           <div class="competency-item">
-            <span><strong>2. Fungsi Statistik Dasar:</strong> Meringkas data numerik dengan MAX, MIN, AVERAGE, LARGE (mencari peringkat/ranking k), serta membedakan fungsi COUNT (hanya angka) dan COUNTA (seluruh sel terisi).</span>
+            <span><strong>2. Fungsi Statistik Dasar:</strong> Meringkas data numerik dengan MAX, MIN, AVERAGE, LARGE
+              (mencari peringkat/ranking k), serta membedakan fungsi COUNT (hanya angka) dan COUNTA (seluruh sel
+              terisi).</span>
           </div>
           <div class="competency-item">
-            <span><strong>3. Agregasi Bersyarat (COUNTIFS & SUMIFS):</strong> Menghitung frekuensi dan menjumlahkan nilai berdasarkan multi-kriteria secara konsisten dan kebal terhadap pengurutan data (sort).</span>
+            <span><strong>3. Agregasi Bersyarat (COUNTIFS & SUMIFS):</strong> Menghitung frekuensi dan menjumlahkan
+              nilai berdasarkan multi-kriteria secara konsisten dan kebal terhadap pengurutan data (sort).</span>
           </div>
           <div class="competency-item">
-            <span><strong>4. Fungsi Teks & Format Huruf:</strong> Menggabungkan string teks dengan operator ampersand (&), CONCATENATE, dan TEXTJOIN, serta merapikan huruf kapital dengan PROPER, UPPER, dan LOWER.</span>
+            <span><strong>4. Fungsi Teks & Format Huruf:</strong> Menggabungkan string teks dengan operator ampersand
+              (&), CONCATENATE, dan TEXTJOIN, serta merapikan huruf kapital dengan PROPER, UPPER, dan LOWER.</span>
           </div>
           <div class="competency-item">
-            <span><strong>5. Fungsi Logika IF & Fill Down:</strong> Menguji kondisi logika untuk pengambilan keputusan otomatis (Lulus/Remedial), menerapkan Nested IF predikat nilai, dan menyalin rumus menggunakan Fill Down (Ctrl+D).</span>
+            <span><strong>5. Fungsi Logika IF & Fill Down:</strong> Menguji kondisi logika untuk pengambilan keputusan
+              otomatis (Lulus/Remedial), menerapkan Nested IF predikat nilai, dan menyalin rumus menggunakan Fill Down
+              (Ctrl+D).</span>
           </div>
           <div class="competency-item">
-            <span><strong>6. Formula Auditing (Show Formulas):</strong> Menyingkap seluruh teks rumus di lembar kerja dengan pintasan Ctrl+`, menganalisis akar error (#VALUE!, #DIV/0!), dan melacak alur sel dengan Trace Precedents.</span>
+            <span><strong>6. Formula Auditing (Show Formulas):</strong> Menyingkap seluruh teks rumus di lembar kerja
+              dengan pintasan Ctrl+`, menganalisis akar error (#VALUE!, #DIV/0!), dan melacak alur sel dengan Trace
+              Precedents.</span>
           </div>
         </div>
       </section>
@@ -206,7 +258,9 @@
           Fondasi & Rahasia Menulis Rumus Excel Tanpa Error
         </h2>
         <p class="beginner-guide-intro">
-          Bagi pemula, menulis rumus Excel terkadang terasa membingungkan karena perbedaan tanda baca atau hasil yang tidak sesuai harapan. Kuasai 4 aturan emas berikut agar setiap rumus yang kamu ketik berjalan lancar dan bebas error:
+          Bagi pemula, menulis rumus Excel terkadang terasa membingungkan karena perbedaan tanda baca atau hasil yang
+          tidak sesuai harapan. Kuasai 4 aturan emas berikut agar setiap rumus yang kamu ketik berjalan lancar dan bebas
+          error:
         </p>
 
         <!-- 4 Essential Golden Rules -->
@@ -217,7 +271,8 @@
               <div class="rule-card-title">1. Wajib Awalan Sama Dengan (=)</div>
             </div>
             <div class="rule-card-desc">
-              Excel hanya akan menghitung kalkulasi jika sel diawali dengan tanda <code>=</code>. Jika lupa, Excel menganggap ketikan kamu sebagai teks biasa dan tidak menghasilkan angka apapun!
+              Excel hanya akan menghitung kalkulasi jika sel diawali dengan tanda <code>=</code>. Jika lupa, Excel
+              menganggap ketikan kamu sebagai teks biasa dan tidak menghasilkan angka apapun!
             </div>
             <code class="rule-card-code">Contoh: =C4*D4 &nbsp; (Bukan C4*D4)</code>
           </div>
@@ -228,7 +283,8 @@
               <div class="rule-card-title">2. Pemisah Titik Koma (;)</div>
             </div>
             <div class="rule-card-desc">
-              <strong>Standar Resmi Excel di Indonesia!</strong> Pemisah antar bagian rumus adalah <strong>titik koma (;)</strong>. Mengetik koma sering memunculkan error <em>"There's a problem with this formula"</em>.
+              <strong>Standar Resmi Excel di Indonesia!</strong> Pemisah antar bagian rumus adalah <strong>titik koma
+                (;)</strong>. Mengetik koma sering memunculkan error <em>"There's a problem with this formula"</em>.
             </div>
             <code class="rule-card-code">Format Benar: =SUMIFS(E2:E20; B2:B20; "Jakarta"; D2:D20; "Lunas")</code>
           </div>
@@ -239,7 +295,9 @@
               <div class="rule-card-title">3. Gembok Absolut F4 / Fn+F4</div>
             </div>
             <div class="rule-card-desc">
-              Simbol <code>$</code> berfungsi seperti paku yang mengunci sel agar tidak bergeser saat dicopy. Tekan tombol <strong>F4</strong> (atau <strong>Fn + F4</strong> pada laptop Asus/Lenovo/HP) saat kursor berada di koordinat sel.
+              Simbol <code>$</code> berfungsi seperti paku yang mengunci sel agar tidak bergeser saat dicopy. Tekan
+              tombol <strong>F4</strong> (atau <strong>Fn + F4</strong> pada laptop Asus/Lenovo/HP) saat kursor berada
+              di koordinat sel.
             </div>
             <code class="rule-card-code">Perubahan: B1 ➔ $B$1 (Terkunci Tetap)</code>
           </div>
@@ -250,7 +308,9 @@
               <div class="rule-card-title">4. Salin Rumus Cepat (Fill Down)</div>
             </div>
             <div class="rule-card-desc">
-              Jangan mengetik rumus berulang kali baris demi baris! Arahkan mouse ke pojok kanan bawah sel (kotak kecil hijau / <em>Fill Handle</em>) hingga menjadi tanda <code>+</code> hitam, lalu <strong>klik ganda</strong> atau tekan <strong>Ctrl + D</strong>.
+              Jangan mengetik rumus berulang kali baris demi baris! Arahkan mouse ke pojok kanan bawah sel (kotak kecil
+              hijau / <em>Fill Handle</em>) hingga menjadi tanda <code>+</code> hitam, lalu <strong>klik ganda</strong>
+              atau tekan <strong>Ctrl + D</strong>.
             </div>
             <code class="rule-card-code">Pintasan Cepat: Ctrl + D (Fill Down)</code>
           </div>
@@ -300,36 +360,46 @@
             </div>
           </div>
           <div style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
-            💡 <strong>Standar Pemisah Rumus:</strong> Gunakan <strong>titik koma (<code>;</code>)</strong> sebagai pemisah argumen resmi (contoh: <code>=SUMIFS(E2:E20; B2:B20; "Jakarta"; D2:D20; "Lunas")</code>). Jika komputer disetel format US, gunakan koma.<br>
-            💡 <strong>Aturan Teks:</strong> Kata bertipe teks (seperti "LULUS" atau "Jakarta") di dalam rumus <strong>wajib diapit tanda kutip dua <code>" "</code></strong>. Nilai angka (seperti 75 atau 11%) tidak perlu tanda kutip.
+            💡 <strong>Standar Pemisah Rumus:</strong> Gunakan <strong>titik koma (<code>;</code>)</strong> sebagai
+            pemisah argumen resmi (contoh: <code>=SUMIFS(E2:E20; B2:B20; "Jakarta"; D2:D20; "Lunas")</code>). Jika
+            komputer disetel format US, gunakan koma.<br>
+            💡 <strong>Aturan Teks:</strong> Kata bertipe teks (seperti "LULUS" atau "Jakarta") di dalam rumus
+            <strong>wajib diapit tanda kutip dua <code>" "</code></strong>. Nilai angka (seperti 75 atau 11%) tidak
+            perlu tanda kutip.
           </div>
         </div>
 
         <!-- Mini Error Dictionary -->
         <div>
-          <div style="font-size:0.92rem; font-weight:700; color:var(--text-main); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          <div
+            style="font-size:0.92rem; font-weight:700; color:var(--text-main); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
             <span>🚑 Kamus Cepat Error Excel Populer & Cara Mengatasinya:</span>
           </div>
           <div class="error-dict-container">
             <div class="error-dict-pill">
               <div class="error-code-name">#VALUE!</div>
-              <div class="error-code-meaning">Tipe data keliru. Misalnya sel angka dikalikan dengan sel berisi huruf/teks. Cek kembali isi sel rujukanmu.</div>
+              <div class="error-code-meaning">Tipe data keliru. Misalnya sel angka dikalikan dengan sel berisi
+                huruf/teks. Cek kembali isi sel rujukanmu.</div>
             </div>
             <div class="error-dict-pill">
               <div class="error-code-name">#NAME?</div>
-              <div class="error-code-meaning">Salah mengeja nama fungsi (misal <code>=SUMM</code>) atau lupa memberi tanda kutip dua pada teks (misal <code>LULUS</code>).</div>
+              <div class="error-code-meaning">Salah mengeja nama fungsi (misal <code>=SUMM</code>) atau lupa memberi
+                tanda kutip dua pada teks (misal <code>LULUS</code>).</div>
             </div>
             <div class="error-dict-pill">
               <div class="error-code-name">#DIV/0!</div>
-              <div class="error-code-meaning">Terjadi pembagian dengan angka 0 atau sel kosong. Pastikan sel pembagi memiliki angka bukan nol.</div>
+              <div class="error-code-meaning">Terjadi pembagian dengan angka 0 atau sel kosong. Pastikan sel pembagi
+                memiliki angka bukan nol.</div>
             </div>
             <div class="error-dict-pill">
               <div class="error-code-name">#####</div>
-              <div class="error-code-meaning">Bukan error hitung! Kolom hanya kurang lebar. <strong>Klik ganda</strong> garis batas kanan header kolom untuk AutoFit.</div>
+              <div class="error-code-meaning">Bukan error hitung! Kolom hanya kurang lebar. <strong>Klik ganda</strong>
+                garis batas kanan header kolom untuk AutoFit.</div>
             </div>
             <div class="error-dict-pill">
               <div class="error-code-name">#REF!</div>
-              <div class="error-code-meaning">Sel rujukan terhapus secara tidak sengaja. Tekan <code>Ctrl + Z</code> untuk membatalkan atau perbaiki koordinat sel.</div>
+              <div class="error-code-meaning">Sel rujukan terhapus secara tidak sengaja. Tekan <code>Ctrl + Z</code>
+                untuk membatalkan atau perbaiki koordinat sel.</div>
             </div>
           </div>
         </div>
@@ -346,7 +416,8 @@
           <span class="section-eyebrow">Evaluasi Formatif</span>
           <h2 class="section-heading" style="font-size:2.1rem;">Kuis Evaluasi Pemahaman Siswa</h2>
           <p style="color:var(--text-muted); font-size:1rem;">
-            Uji pemahaman komprehensif Anda mengenai 6 topik Chapter 4. Setiap soal berbasis studi kasus nyata perhitungan data administrasi, nilai raport sekolah, dan transaksi bisnis.
+            Uji pemahaman komprehensif Anda mengenai 6 topik Chapter 4. Setiap soal berbasis studi kasus nyata
+            perhitungan data administrasi, nilai raport sekolah, dan transaksi bisnis.
           </p>
         </div>
 
@@ -354,7 +425,9 @@
         <div class="quiz-progress-banner" id="quiz-progress-banner">
           <div class="quiz-progress-meta">
             <span id="quiz-progress-text">Progres Pengerjaan: 0 / 6 Soal Terjawab (0%)</span>
-            <span id="quiz-badge-status" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status: Belum Dikumpulkan</span>
+            <span id="quiz-badge-status"
+              style="font-size:0.8rem; font-weight:700; color:var(--text-muted); background:var(--bg-surface); padding:3px 10px; border-radius:999px; border:1px solid var(--border-color);">Status:
+              Belum Dikumpulkan</span>
           </div>
           <div class="quiz-progress-track">
             <div class="quiz-progress-fill" id="quiz-progress-fill" style="background:#d97706;"></div>
@@ -366,7 +439,8 @@
         </div>
 
         <div style="display:flex; justify-content:center; gap:16px; margin-top:28px;">
-          <button class="btn btn-primary" id="btn-submit-quiz" style="padding:12px 28px; font-size:1rem; background:#d97706; border-color:#d97706;">
+          <button class="btn btn-primary" id="btn-submit-quiz"
+            style="padding:12px 28px; font-size:1rem; background:#d97706; border-color:#d97706;">
             📝 Kumpulkan Jawaban & Hitung Skor
           </button>
           <button class="btn btn-outline" id="btn-reset-quiz" style="padding:12px 20px;">
@@ -376,13 +450,16 @@
       </section>
 
       <!-- ================= FOOTER ================= -->
-      <footer style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
+      <footer
+        style="margin-top:80px; padding-top:24px; border-top:1px solid var(--border-color); text-align:center; color:var(--text-muted); font-size:0.85rem;">
         <p><strong>Modul Pembelajaran ICT - Microsoft Excel Chapter 4</strong></p>
         <p style="margin-top:4px;">Dirancang khusus sebagai Modul Interaktif dan Panduan Praktik Mandiri Siswa.</p>
         <p style="margin-top:8px; display:flex; justify-content:center; gap:16px;">
-          <a href="index.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke Chapter 2</a>
+          <a href="index.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke
+            Chapter 2</a>
           <span>•</span>
-          <a href="chapter3.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke Chapter 3</a>
+          <a href="chapter3.html" style="color:var(--excel-green); text-decoration:none; font-weight:600;">← Kembali ke
+            Chapter 3</a>
         </p>
       </footer>
 
@@ -500,17 +577,21 @@
     <!-- Pres Topbar -->
     <div class="pres-topbar">
       <div style="display:flex; align-items:center; gap:12px;">
-        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE PEMBELAJARAN</span>
+        <span style="font-weight:800; font-family:var(--font-heading); color:#38bdf8;">📽️ MODE SLIDE
+          PEMBELAJARAN</span>
         <span style="font-size:0.8rem; background:#1e293b; color:#94a3b8; padding:3px 10px; border-radius:4px;">
           Gunakan Tombol Panah [ ← / → ] atau Space
         </span>
       </div>
 
       <div style="display:flex; align-items:center; gap:12px;">
-        <button class="btn btn-outline" id="btn-pres-laser" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;" title="Nyalakan Laser Pointer Virtual (Tekan L)">
+        <button class="btn btn-outline" id="btn-pres-laser"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;"
+          title="Nyalakan Laser Pointer Virtual (Tekan L)">
           🔴 Laser Pointer (L)
         </button>
-        <button class="btn btn-outline" id="btn-pres-close" style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
+        <button class="btn btn-outline" id="btn-pres-close"
+          style="padding:6px 14px; font-size:0.82rem; border-color:#334155; color:#f8fafc;">
           ✕ Tutup Presentasi (Esc)
         </button>
       </div>
@@ -529,7 +610,8 @@
         ← Slide Sebelumnya
       </button>
 
-      <div id="pres-slide-counter" style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
+      <div id="pres-slide-counter"
+        style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:#38bdf8;">
         1 / 9
       </div>
 
@@ -548,4 +630,5 @@
   <script src="js/presentation-mode-ch4.js?v=4.3"></script>
   <script src="js/app-ch4.js?v=4.3"></script>
 </body>
+
 </html>
